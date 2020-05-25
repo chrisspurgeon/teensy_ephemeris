@@ -1,0 +1,6 @@
+How to compute planetary positions...
+http://www.stjarnhimlen.se/comp/ppcomp.html
+
+Examples
+http://www.stjarnhimlen.se/comp/tutorial.html
+
