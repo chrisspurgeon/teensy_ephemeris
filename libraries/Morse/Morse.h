@@ -16,6 +16,7 @@
             void dash();
             void space();
             void flash();
+            void flash(int counter);
         private:
             int _pin;
     };

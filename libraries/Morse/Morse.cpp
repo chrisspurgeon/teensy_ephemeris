@@ -33,23 +33,33 @@ void Morse::space() {
 
 void Morse::flash() {
     digitalWrite(_pin, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(_pin, LOW);
-    delay(100);  
+    delay(50);
     digitalWrite(_pin, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(_pin, LOW);
-    delay(100);  
+    delay(50);
     digitalWrite(_pin, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(_pin, LOW);
-    delay(100);  
+    delay(50);
     digitalWrite(_pin, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(_pin, LOW);
-    delay(100);  
+    delay(50);
     digitalWrite(_pin, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(_pin, LOW);
-    delay(500);  
+    delay(500);
+}
+
+void Morse::flash(int _count) {
+    for (int i = 0; i < _count; i++) {
+        digitalWrite(_pin, HIGH);
+        delay(50);
+        digitalWrite(_pin, LOW);
+        delay(50);
+    }
+    delay(450);
 }
