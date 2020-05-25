@@ -4,3 +4,8 @@ http://www.stjarnhimlen.se/comp/ppcomp.html
 Examples
 http://www.stjarnhimlen.se/comp/tutorial.html
 
+
+USING THE TEENSY
+REMEMBER to use Teensyduino, NOT Arduino IDE. When Teensy utility app launches, put it into "Auto" mode.
+
+
