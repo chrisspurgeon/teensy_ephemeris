@@ -15,7 +15,7 @@
     class Teensy_Ephemeris {
         public:
             Teensy_Ephemeris();
-            long getJulianDate(int year, int month, int day, long hours);
+            double getJulianDate(int year, int month, int day, double hours);
             // void dot();
         private:
             // int _pin;

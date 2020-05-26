@@ -13,11 +13,11 @@
 Teensy_Ephemeris::Teensy_Ephemeris() {
 }
 
-long Teensy_Ephemeris::getJulianDate(int year, int month, int day, long hours) {
+double Teensy_Ephemeris::getJulianDate(int year, int month, int day, double hours) {
 
     // in JavaScript getJulianDate(1776,7,4,13) returns 2369914.0416666665
 
-    long result = 0.0000000000;
+    double result = 0.0000000000;
     result = ((367.0 * year) 
            - floor(7.00 * (year + floor(( month + 9.00 ) / 12.00)) / 4.00)
            + floor((275.0 * month) / 9.00) 
@@ -25,5 +25,7 @@ long Teensy_Ephemeris::getJulianDate(int year, int month, int day, long hours) {
            - 730530.00 
            + (hours / 24.00))
            + 2451543.50;
+    
+    return result;
 
 }
