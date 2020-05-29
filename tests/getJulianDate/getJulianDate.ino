@@ -3,13 +3,12 @@
 Teensy_Ephemeris TE;
 void setup() {
 
-  // This should return 2369914.0416666665
-  double JD = TE.getJulianDate(1776,7,4,13);
+  // TE.getJulianDate(2020,5,29,23,50,54) should return 2458999.4936805554
+  double JD = TE.getJulianDate(2020,5,29,23,50,54);
 
   Serial.begin(9600);
-  Serial.println("HELLO");
+  Serial.println("For TE.getJulianDate(2020,5,29,23,50,54) I expect a value of 2458999.4936805554. We got...");
   Serial.println(JD, 10);
-  Serial.println("Goodbye");
 
 }
 

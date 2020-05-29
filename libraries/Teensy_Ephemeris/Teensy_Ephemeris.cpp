@@ -9,6 +9,7 @@
 
 #include "Arduino.h"
 #include "Teensy_Ephemeris.h"
+#include <math.h>
 
 Teensy_Ephemeris::Teensy_Ephemeris() {
 }
@@ -28,12 +29,24 @@ double Teensy_Ephemeris::getDayNumber(int year, int month, int day, double hours
 }
 
 
-double Teensy_Ephemeris::getJulianDate(int year, int month, int day, double hours) {
+double Teensy_Ephemeris::getJulianDate(int year, int month, int day, int hours, int minutes, int seconds) {
+  // julian date for "year":2020,"month":5,"day":29,"hours":14,"minutes":47,"seconds":54  should = 2458999.4082638887
 
-    // in JavaScript getJulianDate(1776,7,4,13) returns 2369914.0416666665
+  double result = 0.0000000000;
 
-    double result = 0.0000000000;
-    result = getDayNumber(year, month, day, hours) + 2451543.50;
+  // First, calculate the Julian day...
+  int _year = year;
+  int _month = month;
+  if (_month < 3) {
+    _month += 12;
+    _year -= 1;
+  }
+  double a = floor(_year / 100.00);
+  double b = 2 - a + floor(a / 4.00);
+  result = floor( 365.25 * ( _year + 4716)) + floor(30.6001 * (_month + 1)) + day + b -1524.5;
+
+  // Now deal with hours, minutes and seconds
+    result += (hours + ((minutes) / 60.0) + (seconds / 3600.0)) / 24.0;
     return result;
 }
 
