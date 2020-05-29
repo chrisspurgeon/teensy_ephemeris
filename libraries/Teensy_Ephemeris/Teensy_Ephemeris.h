@@ -15,8 +15,9 @@
     class Teensy_Ephemeris {
         public:
             Teensy_Ephemeris();
+            double getDayNumber(int year, int month, int day, double hours);
             double getJulianDate(int year, int month, int day, double hours);
-            // void dot();
+            double getLocalSiderialTime(int year, int month, int day, double hours,double longitude);
         private:
             // int _pin;
     };
