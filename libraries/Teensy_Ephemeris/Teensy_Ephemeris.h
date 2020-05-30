@@ -12,12 +12,20 @@
 
     #include "Arduino.h"
 
+    struct foo {
+        int var1;
+        int var2;
+    };
+
     class Teensy_Ephemeris {
+
         public:
             Teensy_Ephemeris();
+            foo fooholder;
             double getDayNumber(int year, int month, int day, double hours);
             double getJulianDate(int year, int month, int day, int hours, int miutes, int seconds);
             double getLocalSiderialTime(int year, int month, int day, double hours,double longitude);
+            int foocheck();
         private:
             // int _pin;
     };

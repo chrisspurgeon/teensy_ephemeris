@@ -14,6 +14,14 @@
 Teensy_Ephemeris::Teensy_Ephemeris() {
 }
 
+
+int Teensy_Ephemeris::foocheck() {
+  return fooholder.var1 + fooholder.var2;
+}
+
+
+
+
 double Teensy_Ephemeris::getDayNumber(int year, int month, int day, double hours) {
 
     double result = 0.0000000000;
