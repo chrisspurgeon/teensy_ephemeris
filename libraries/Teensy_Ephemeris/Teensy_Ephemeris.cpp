@@ -37,7 +37,7 @@ double Teensy_Ephemeris::getDayNumber(int year, int month, int day, double hours
 }
 
 
-double Teensy_Ephemeris::getJulianDate(int year, int month, int day, int hours, int minutes, int seconds) {
+double Teensy_Ephemeris::determineJulianDate(int year, int month, int day, int hours, int minutes, int seconds) {
   // julian date for "year":2020,"month":5,"day":29,"hours":14,"minutes":47,"seconds":54  should = 2458999.4082638887
 
   double result = 0.0000000000;
@@ -74,4 +74,53 @@ double Teensy_Ephemeris::getLocalSiderialTime(int year, int month, int day, doub
 //  var lst=(98.9818+0.985647352*d+hours*15+lon);
 //  return rev(lst)/15;
 
+}
+
+
+void Teensy_Ephemeris::setTime(int year, int month, int day, int hours, int minutes, int seconds) {
+  time.year = year;
+  time.month = month;
+  time.day = day;
+  time.hours = hours;
+  time.minutes = minutes;
+  time.seconds = seconds;
+}
+
+void Teensy_Ephemeris::setJulianDate() {
+  time.JulianDate = determineJulianDate(time.year, time.month, time.day, time.hours, time.minutes, time.seconds);
+}
+
+double Teensy_Ephemeris::getJulianDate() {
+  return time.JulianDate;
+}
+int Teensy_Ephemeris::getYear() {
+  return time.year;
+}
+
+int Teensy_Ephemeris::getMonth() {
+  return time.month;
+}
+
+int Teensy_Ephemeris::getDay() {
+  return time.day;
+}
+
+int Teensy_Ephemeris::getHours() {
+  return time.hours;
+}
+
+int Teensy_Ephemeris::getMinutes() {
+  return time.minutes;
+}
+
+int Teensy_Ephemeris::getSeconds() {
+  return time.seconds;
+}
+
+void Teensy_Ephemeris::setName(String planetName) {
+  body.name = String(planetName);
+}
+
+String Teensy_Ephemeris::getName() {
+  return body.name;
 }

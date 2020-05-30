@@ -17,15 +17,47 @@
         int var2;
     };
 
+    struct planetbody {
+        String name;
+        long    RA;
+        long    dec;
+        long    altitude;
+        long    azimuth;
+    };
+
+    struct planettime {
+        int year;
+        int month;
+        int day;
+        int hours;
+        int minutes;
+        int seconds;
+        double JulianDate;
+        double localSiderialTime;
+    };
+
     class Teensy_Ephemeris {
 
         public:
             Teensy_Ephemeris();
             foo fooholder;
+            planetbody body;
+            planettime time;
             double getDayNumber(int year, int month, int day, double hours);
-            double getJulianDate(int year, int month, int day, int hours, int miutes, int seconds);
+            double determineJulianDate(int year, int month, int day, int hours, int minutes, int seconds);
             double getLocalSiderialTime(int year, int month, int day, double hours,double longitude);
             int foocheck();
+            void setTime(int year, int month, int day, int hours, int minutes, int seconds);
+            void setJulianDate();
+            double getJulianDate();
+            int getYear();
+            int getMonth();
+            int getDay();
+            int getHours();
+            int getMinutes();
+            int getSeconds();
+            void setName(String);
+            String getName();
         private:
             // int _pin;
     };
