@@ -43,6 +43,9 @@
             foo fooholder;
             planetbody body;
             planettime time;
+            bool debug = false;
+            void setDebugging(bool _debug);
+            void getDebugging();
             double rev(double angle);
             double sind(double angle);
             double cosd(double angle);

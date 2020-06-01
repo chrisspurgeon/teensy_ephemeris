@@ -12,11 +12,25 @@
 #include <math.h>
 
 Teensy_Ephemeris::Teensy_Ephemeris() {
+  debug = false;
 }
 
 
 int Teensy_Ephemeris::foocheck() {
   return fooholder.var1 + fooholder.var2;
+}
+
+void Teensy_Ephemeris::setDebugging(bool _debug) {
+  debug = _debug;
+  getDebugging();
+}
+
+void Teensy_Ephemeris::getDebugging() {
+  if (debug == 1) {
+    Serial.println("DEBUG: debugging is ON");
+  } else {
+    Serial.println("DEBUG: debugging is OFF");
+  }
 }
 
 //Math and geometry functions
@@ -112,10 +126,29 @@ void Teensy_Ephemeris::setTime(int year, int month, int day, int hours, int minu
   time.hours = hours;
   time.minutes = minutes;
   time.seconds = seconds;
+  if (debug) {
+    Serial.println("DEBUG: setTime()");
+    Serial.print("       time.year is ");
+    Serial.println(time.year);
+    Serial.print("       time.month is ");
+    Serial.println(time.month);
+    Serial.print("       time.day is ");
+    Serial.println(time.day);
+    Serial.print("       time.hours is ");
+    Serial.println(time.hours);
+    Serial.print("       time.minutes is ");
+    Serial.println(time.minutes);
+    Serial.print("       time.seconds is ");
+    Serial.println(time.seconds);
+  }
 }
 
 void Teensy_Ephemeris::setJulianDate() {
   time.JulianDate = determineJulianDate(time.year, time.month, time.day, time.hours, time.minutes, time.seconds);
+  if (debug) {
+    Serial.print("DEBUG: setJulianDate()\n       ");
+    Serial.println(time.JulianDate, 12);
+  }
 }
 
 double Teensy_Ephemeris::getJulianDate() {
@@ -138,6 +171,9 @@ int Teensy_Ephemeris::getHours() {
 }
 
 int Teensy_Ephemeris::getMinutes() {
+  Serial.println("Inside getMinutes()!");
+  Serial.print("minutes is ");
+  Serial.println(time.minutes, 10);
   return time.minutes;
 }
 
@@ -147,6 +183,10 @@ int Teensy_Ephemeris::getSeconds() {
 
 void Teensy_Ephemeris::setName(String planetName) {
   body.name = String(planetName);
+  if (debug) {
+    Serial.print("DEBUG: setName()\n       body.name is ");
+    Serial.println("'" + body.name + "'");
+  }
 }
 
 String Teensy_Ephemeris::getName() {
@@ -293,6 +333,24 @@ double Teensy_Ephemeris::calculateMoonPosition() {
   double E = 1.0 - 0.002516 * T - 0.0000074 * T2;
   double E2 = E * E;
 
-  return E2;
+  // Sums of periodic terms from table 45.A and 45.B
+  double Sl = 0.0;
+  double Sr = 0.0;
+  double Eterm = 0.0;
+  for (int i = 0; i < 1; i++) {
+    Eterm = 1.0;
+    if (abs(T45AM[i]) == 1) {
+      Eterm = E;
+    }
+    if (abs(T45AM[i]) == 2) {
+      Eterm=E2;
+    }
+    return Tshifted;
+    Sl += T45AL[i] * Eterm * sind(rev(T45AD[i] * D + T45AM[i] * M + T45AMP[i] * MP + T45AF[i] * F));
+    Sr += T45AR[i] * Eterm * cosd(rev(T45AD[i] * D + T45AM[i] * M + T45AMP[i] * MP + T45AF[i] * F));
+  }
+
+//  return Sl;
+
 
 }
