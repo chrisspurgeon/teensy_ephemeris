@@ -43,6 +43,13 @@
             foo fooholder;
             planetbody body;
             planettime time;
+            double rev(double angle);
+            double sind(double angle);
+            double cosd(double angle);
+            double tand(double angle);
+            double asind(double c);
+            double acosd(double c);
+            double atan2d(double y, double x);
             double getDayNumber(int year, int month, int day, double hours);
             double determineJulianDate(int year, int month, int day, int hours, int minutes, int seconds);
             double getLocalSiderialTime(int year, int month, int day, double hours,double longitude);

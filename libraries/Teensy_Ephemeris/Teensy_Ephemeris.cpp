@@ -19,6 +19,34 @@ int Teensy_Ephemeris::foocheck() {
   return fooholder.var1 + fooholder.var2;
 }
 
+//Math and geometry functions
+double Teensy_Ephemeris::rev(double angle) {
+  return angle - floor( angle / 360.0 ) * 360.0;
+}
+
+double Teensy_Ephemeris::sind(double angle) {
+  return sin((angle * M_PI) / 180.0 );
+}
+
+double Teensy_Ephemeris::cosd(double angle) {
+  return cos((angle * M_PI) / 180.0);
+}
+
+double Teensy_Ephemeris::tand(double angle) {
+  return tan((angle * M_PI) / 180.0);
+}
+
+double Teensy_Ephemeris::asind(double c) {
+  return (180.0 / M_PI) * asin(c);
+}
+
+double Teensy_Ephemeris::acosd(double c) {
+  return (180.0 / M_PI) * acos(c);
+}
+
+double Teensy_Ephemeris::atan2d(double y, double x) {
+  return (180.0 / M_PI) * atan( y / x ) -180.0 * ( x < 0);
+}
 
 
 
