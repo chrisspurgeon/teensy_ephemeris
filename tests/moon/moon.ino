@@ -6,14 +6,13 @@ void setup() {
   Serial.begin(9600);
   moon.setName("themoon");
   Serial.println(moon.getName());
-  moon.setName("Venus");
-  Serial.println(moon.getName());
-  moon.setTime(2020,5,29,23,50,54);
+  moon.setTime(2020,6,1,1,51,24);
   Serial.println(moon.getMinutes());
   moon.setJulianDate();
   Serial.println(moon.getJulianDate(),10);
   Serial.println(moon.time.JulianDate,10);
-
+  double foo = moon.calculateMoonPosition();
+  Serial.println(foo,15);
 }
 
 void loop() {

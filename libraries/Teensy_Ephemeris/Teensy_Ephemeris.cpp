@@ -124,3 +124,47 @@ void Teensy_Ephemeris::setName(String planetName) {
 String Teensy_Ephemeris::getName() {
   return body.name;
 }
+
+double Teensy_Ephemeris::calculateMoonPosition() {
+  setJulianDate();
+  double T = 0.000L;
+  double T2 = 0.000L;
+  double T3 = 0.000L;
+  double T4 = 0.000L;
+  double Tshifted = 0.000L;
+  double T2shifted = 0.00L;
+  double T3shifted = 0.00L;
+  double T4shifted = 0.00L;
+  Tshifted = (getJulianDate() - 2451545.0) / 365.250; // increase by 100 to stop rounding errors.
+  T = Tshifted / 100.00;
+  T2shifted = Tshifted * Tshifted;
+  T2 = T2shifted / 10000.00;
+  T3shifted = Tshifted * Tshifted * Tshifted;
+  T3 = T3shifted / 1000000.00;
+  T4shifted = Tshifted * Tshifted * Tshifted * Tshifted;
+  T4 = T4shifted / 100000000.00;
+
+  // Moons mean longitude L'
+  double LP = 218.3164477 + 481267.88123421 * T -0.0015786 * T2 + T3 / 538841.0 - T4 / 65194000.0;
+
+  // Moons mean elongation Meeus second edition
+  double D = 297.8501921 + 445267.1114034 * T - 0.0018819 * T2 + T3 / 545868.0 - T4 / 113065000.0;
+
+  // Moons mean anomaly M' Meeus second edition
+  double MP = 134.9633964 + 477198.8675055 * T + 0.0087414 * T2 + T3 / 69699.0 - T4 / 14712000.0;
+
+  // Moons argument of latitude
+  double F = 93.2720950 + 483202.0175233 * T - 0.0036539 * T2 - T3 / 3526000.0 + T4 / 863310000.0;
+
+  // Suns mean anomaly
+  double M = 357.5291092 + 35999.0502909 * T - 0.0001536 * T2 + T3 / 24490000.0;
+
+  double A1 = 119.75 + 131.849 * T;
+  double A2 = 53.09 + 479264.290 * T;
+  double A3 = 313.45 + 481266.484 * T;
+  double E = 1.0 - 0.002516 * T - 0.0000074 * T2;
+  double E2 = E * E;
+
+  return E2;
+
+}

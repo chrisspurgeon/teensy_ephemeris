@@ -56,6 +56,7 @@
             int getHours();
             int getMinutes();
             int getSeconds();
+            double calculateMoonPosition();
             void setName(String);
             String getName();
         private:
