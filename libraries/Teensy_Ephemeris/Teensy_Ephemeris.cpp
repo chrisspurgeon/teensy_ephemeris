@@ -171,9 +171,6 @@ int Teensy_Ephemeris::getHours() {
 }
 
 int Teensy_Ephemeris::getMinutes() {
-  Serial.println("Inside getMinutes()!");
-  Serial.print("minutes is ");
-  Serial.println(time.minutes, 10);
   return time.minutes;
 }
 
@@ -191,6 +188,68 @@ void Teensy_Ephemeris::setName(String planetName) {
 
 String Teensy_Ephemeris::getName() {
   return body.name;
+}
+
+void Teensy_Ephemeris::setLocation(double _latitude, double _longitude) {
+  if (_latitude < -90.00 || _latitude > 90.00) {
+    location.latitude = 0.00;
+    Serial.println("WARNING: Invalid latitude. Reset to 0.00.");
+  } else {
+    location.latitude = _latitude;
+  }
+  if (_longitude > 180.0 || _longitude < -180.00) {
+    location.longitude = 0.00;
+    Serial.println("WARNING: Invalid longitude. Reset to 0.00.");
+  } else {
+    location.longitude = _longitude;
+  }
+  location.altitude = 0.0;
+  if (debug) {
+    Serial.println("DEBUG: setLocation()");
+    Serial.print("       Latitude: ");
+    Serial.println(location.latitude, 10);
+    Serial.print("       Longitude: ");
+    Serial.println(location.longitude, 10);
+    Serial.print("       Altitude: ");
+    Serial.println(location.altitude, 10);
+  }
+}
+
+void Teensy_Ephemeris::setLocation(double _latitude, double _longitude, double _altitude) {
+  if (_latitude < -90.00 || _latitude > 90.00) {
+    location.latitude = 0.00;
+    Serial.println("WARNING: Invalid latitude. Reset to 0.00.");
+  } else {
+    location.latitude = _latitude;
+  }
+  if (_longitude > 180.0 || _longitude < -180.00) {
+    location.longitude = 0.00;
+    Serial.println("WARNING: Invalid longitude. Reset to 0.00.");
+  } else {
+    location.longitude = _longitude;
+  }
+  location.altitude = _altitude;
+  if (debug) {
+    Serial.println("DEBUG: setLocation()");
+    Serial.print("       Latitude: ");
+    Serial.println(location.latitude, 10);
+    Serial.print("       Longitude: ");
+    Serial.println(location.longitude, 10);
+    Serial.print("       Altitude: ");
+    Serial.println(location.altitude, 10);
+  }
+}
+
+double Teensy_Ephemeris::getLongitude() {
+  return location.longitude;
+}
+
+double Teensy_Ephemeris::getLatitude() {
+  return location.latitude;
+}
+
+double Teensy_Ephemeris::getAltitude() {
+  return location.altitude;
 }
 
 double Teensy_Ephemeris::calculateMoonPosition() {

@@ -25,7 +25,7 @@
         long    azimuth;
     };
 
-    struct planettime {
+    struct observertime {
         int year;
         int month;
         int day;
@@ -36,13 +36,20 @@
         double localSiderialTime;
     };
 
+    struct observerLocation {
+        double latitude = 34.225;
+        double longitude = -118.236944;
+        double altitude = 469.2;
+    };
+
     class Teensy_Ephemeris {
 
         public:
             Teensy_Ephemeris();
             foo fooholder;
             planetbody body;
-            planettime time;
+            observertime time;
+            observerLocation location;
             bool debug = false;
             void setDebugging(bool _debug);
             void getDebugging();
@@ -58,6 +65,11 @@
             double getLocalSiderialTime(int year, int month, int day, double hours,double longitude);
             int foocheck();
             void setTime(int year, int month, int day, int hours, int minutes, int seconds);
+            void setLocation( double latitude, double longitude);
+            void setLocation(double latitude, double longitude, double altitude);
+            double getLatitude();
+            double getLongitude();
+            double getAltitude();
             void setJulianDate();
             double getJulianDate();
             int getYear();
