@@ -431,7 +431,8 @@ double Teensy_Ephemeris::calculateMoonPosition() {
   double Sl = 0.0;
   double Sr = 0.0;
   double Eterm = 0.0;
-  for (int i = 0; i < 60; i++) {
+  int i;
+  for (i = 0; i < 60; i++) {
     Eterm = 1.0;
     if (abs(T45AM[i]) == 1) {
       Eterm = E;
@@ -443,13 +444,61 @@ double Teensy_Ephemeris::calculateMoonPosition() {
     Sr += T45AR[i] * Eterm * cosd(rev(T45AD[i] * D + T45AM[i] * M + T45AMP[i] * MP + T45AF[i] * F));
   }
 
+  double Sb = 0.0;
+  for (i = 0; i < 60; i++) {
+    Eterm = 1.00;
+    if (abs(T45BM[i]) == 1) {
+      Eterm = E;
+    }
+    if (abs(T45BM[i]) == 2) {
+      Eterm = E2;
+    }
+    Sb += T45BL[i] * Eterm * sind(rev(T45BD[i] * D + T45BM[i] * M + T45BMP[i] * MP + T45BF[i] * F));
+  }
+  // Additional additive terms
+  Sl = Sl + 3958 * sind(rev(A1)) + 1962 * sind(rev(LP - F)) + 318.0 * sind(rev(A2));
+  Sb = Sb - 2235 * sind(rev(LP)) + 382 * sind(rev(A3)) + 175.0 * sind(rev(A1-F)) + 175.0 * sind(rev(A1 + F)) + 127.0 * sind(rev(LP - MP)) - 115.0 * sind(rev(LP + MP));
+
   if (debug) {
     Serial.print("       Sl: ");
     Serial.println(Sl,12);
     Serial.print("       Sr: ");
     Serial.println(Sr,12);
+    Serial.print("       Sb: ");
+    Serial.println(Sb,12);
   }
+
+
+
+
+
+
+
+
+
+
   return Sl;
 
-
 }
+
+/*
+  // geocentric longitude, latitude and distance
+  var mglong=rev(LP+Sl/1000000.0);
+  var mglat=rev(Sb/1000000.0);
+  if (mglat > 180.0) mglat=mglat-360;
+  var mr=Math.round(385000.56+Sr/1000.0);
+  // Obliquity of Ecliptic
+  var obl=23.4393-3.563E-7*(jdobs-2451543.5);
+  // RA and dec
+  var ra=rev(atan2d(sind(mglong)*cosd(obl)-tand(mglat)*sind(obl),
+                    cosd(mglong)))/15.0;
+  var dec=rev(asind(sind(mglat)*cosd(obl)+cosd(mglat)*sind(obl)*sind(mglong)));
+  if (dec > 180.0) dec=dec-360;
+  // phase angle
+  var pa=180.0-D-6.289*sind(MP)+2.1*sind(M)-1.274*sind(2*D-MP)
+         -0.658*sind(2*D)-0.214*sind(2*MP)-0.11*sind(D);
+  // Altitude and azimuth
+  var altaz=radtoaa(ra,dec,obs);
+  return new Array(ra,dec,mr,altaz[0],altaz[1],rev(pa));
+
+*/
