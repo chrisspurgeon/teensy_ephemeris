@@ -1,0 +1,78 @@
+############################################
+#Syntax Coloring Map for Teensy_Ephemeris
+############################################
+
+############################################
+#Datatypes (KEYWORD1)
+############################################
+
+Teensy_Ephemeris	KEYWORD1
+
+############################################
+#Methods and Functions (KEYWORD2)
+############################################
+
+acosd	KEYWORD2
+altitude	KEYWORD2
+asind	KEYWORD2
+atan2d	KEYWORD2
+azimuth	KEYWORD2
+body	KEYWORD2
+calculateAltitudeAndAzimuth	KEYWORD2
+calculateMoonPosition	KEYWORD2
+cosd	KEYWORD2
+day	KEYWORD2
+debug	KEYWORD2
+dec	KEYWORD2
+determineJulianDate	KEYWORD2
+getAltitude	KEYWORD2
+getAzimuth	KEYWORD2
+getDay	KEYWORD2
+getDayNumber	KEYWORD2
+getDebugging	KEYWORD2
+getDec	KEYWORD2
+getHours	KEYWORD2
+getJulianDate	KEYWORD2
+getLatitude	KEYWORD2
+getLocalSiderialTime	KEYWORD2
+getLongitude	KEYWORD2
+getMinutes	KEYWORD2
+getMonth	KEYWORD2
+getName	KEYWORD2
+getRA	KEYWORD2
+getSeconds	KEYWORD2
+getYear	KEYWORD2
+hours	KEYWORD2
+JulianDate	KEYWORD2
+latitude	KEYWORD2
+localSiderialTime	KEYWORD2
+location	KEYWORD2
+longitude	KEYWORD2
+minutes	KEYWORD2
+month	KEYWORD2
+name	KEYWORD2
+RA	KEYWORD2
+rev	KEYWORD2
+seconds	KEYWORD2
+setDebugging	KEYWORD2
+setDec	KEYWORD2
+setJulianDate	KEYWORD2
+setLatitude	KEYWORD2
+setLocalSiderialTime	KEYWORD2
+setLocalSiderialTime	KEYWORD2
+setLocation	KEYWORD2
+setLongitude	KEYWORD2
+setName	KEYWORD2
+setRA	KEYWORD2
+setTime	KEYWORD2
+sind	KEYWORD2
+tand	KEYWORD2
+time	KEYWORD2
+year	KEYWORD2
+
+#######################################
+#Constants (LITERAL1)
+#######################################
+
+#MICROSTEPPING	LITERAL1
+

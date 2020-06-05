@@ -287,12 +287,6 @@ void Teensy_Ephemeris::calculateAltitudeAndAzimuth() {
 
 
 
-
-
-
-
-
-
 void Teensy_Ephemeris::calculateMoonPosition() {
 
   unsigned char T45AD [60] = { 0, 2, 2, 0, 0, 0, 2, 2, 2, 2,
