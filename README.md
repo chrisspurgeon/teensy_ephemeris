@@ -1,4 +1,4 @@
-# teensy_ephemeris
+# Teensy_Ephemeris
 Arduino library to perform planetary calculations. Requires Teensy4.0 processor or above.
 ## Introduction
 The teensy_ephemeris library can be used to calculate the position of the moon in space at any
