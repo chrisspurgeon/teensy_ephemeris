@@ -19,10 +19,10 @@
 
     struct planetbody {
         String name;
-        long    RA;
-        long    dec;
-        long    altitude;
-        long    azimuth;
+        double    RA;
+        double    dec;
+        double    altitude;
+        double    azimuth;
     };
 
     struct observertime {
@@ -39,7 +39,6 @@
     struct observerLocation {
         double latitude = 34.225;
         double longitude = -118.236944;
-        double altitude = 469.2;
     };
 
     class Teensy_Ephemeris {
@@ -62,16 +61,24 @@
             double atan2d(double y, double x);
             double getDayNumber(int year, int month, int day, double hours);
             double determineJulianDate(int year, int month, int day, int hours, int minutes, int seconds);
-            double getLocalSiderialTime(int year, int month, int day, double hours,double longitude);
+            void setLocalSiderialTime(int year, int month, int day, double hours,double longitude);
+            void setLocalSiderialTime();
+            double getLocalSiderialTime();
             int foocheck();
             void setTime(int year, int month, int day, int hours, int minutes, int seconds);
-            void setLocation( double latitude, double longitude);
-            void setLocation(double latitude, double longitude, double altitude);
+            void setLocation(double latitude, double longitude);
             double getLatitude();
             double getLongitude();
-            double getAltitude();
+            void setLatitude(double latitude);
+            void setLongitude(double longitude);
             void setJulianDate();
             double getJulianDate();
+            void setRA(double ra);
+            void setDec(double dec);
+            double getRA();
+            double getDec();
+            double getAltitude();
+            double getAzimuth();
             int getYear();
             int getMonth();
             int getDay();

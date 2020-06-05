@@ -100,22 +100,31 @@ double Teensy_Ephemeris::determineJulianDate(int year, int month, int day, int h
     return result;
 }
 
+double Teensy_Ephemeris::getLocalSiderialTime() {
+  return time.localSiderialTime;
+}
+
+
 // Compute local siderial time in degrees
 // year, month, day and hours are the Greenwich date and time
 // longitude is the observers longitude
-double Teensy_Ephemeris::getLocalSiderialTime(int year, int month, int day, double hours, double longitude) {
-    double result = 0.0000;
-    double d = 0.0;
-    double lst = 0.0;
+void Teensy_Ephemeris::setLocalSiderialTime(int year, int month, int day, double hours, double longitude) {
+  double result = 0.0000;
+  double d = 0.0;
+  double lst = 0.0;
 
-    d = getDayNumber(year, month, day, hours);
-    lst = (98.9818 + 0.985647352 * d + hours *15 + longitude);
-    result = lst / 15.0;  //TODO rev function
-    return result;
-//  var d=dayno(year,month,day,hours);
-//  var lst=(98.9818+0.985647352*d+hours*15+lon);
-//  return rev(lst)/15;
+  d = getDayNumber(year, month, day, hours);
+  lst = (98.9818 + 0.985647352 * d + hours * 15 + longitude);
+  result = lst / 15.0;
+  time.localSiderialTime = result;
+  if (debug) {
+    Serial.print("DEBUG: setLocalSiderialTime()\n       ");
+    Serial.println(time.localSiderialTime, 12);
+  }
+}
 
+void Teensy_Ephemeris::setLocalSiderialTime() {
+  setLocalSiderialTime(time.year, time.month, time.day, time.hours, location.longitude);
 }
 
 
@@ -203,40 +212,28 @@ void Teensy_Ephemeris::setLocation(double _latitude, double _longitude) {
   } else {
     location.longitude = _longitude;
   }
-  location.altitude = 0.0;
   if (debug) {
     Serial.println("DEBUG: setLocation()");
     Serial.print("       Latitude: ");
     Serial.println(location.latitude, 10);
     Serial.print("       Longitude: ");
     Serial.println(location.longitude, 10);
-    Serial.print("       Altitude: ");
-    Serial.println(location.altitude, 10);
   }
 }
 
-void Teensy_Ephemeris::setLocation(double _latitude, double _longitude, double _altitude) {
-  if (_latitude < -90.00 || _latitude > 90.00) {
-    location.latitude = 0.00;
-    Serial.println("WARNING: Invalid latitude. Reset to 0.00.");
-  } else {
-    location.latitude = _latitude;
-  }
-  if (_longitude > 180.0 || _longitude < -180.00) {
-    location.longitude = 0.00;
-    Serial.println("WARNING: Invalid longitude. Reset to 0.00.");
-  } else {
-    location.longitude = _longitude;
-  }
-  location.altitude = _altitude;
+void Teensy_Ephemeris::setLatitude(double _latitude) {
+  location.latitude = _latitude;
   if (debug) {
-    Serial.println("DEBUG: setLocation()");
-    Serial.print("       Latitude: ");
+    Serial.print("DEBUG: setLatitude()\n       ");
     Serial.println(location.latitude, 10);
-    Serial.print("       Longitude: ");
+  }
+}
+
+void Teensy_Ephemeris::setLongitude(double _longitude) {
+  location.longitude = _longitude;
+  if (debug) {
+    Serial.print("DEBUG: setLongitude()\n       ");
     Serial.println(location.longitude, 10);
-    Serial.print("       Altitude: ");
-    Serial.println(location.altitude, 10);
   }
 }
 
@@ -248,8 +245,20 @@ double Teensy_Ephemeris::getLatitude() {
   return location.latitude;
 }
 
+double Teensy_Ephemeris::getRA() {
+  return body.RA;
+}
+
+double Teensy_Ephemeris::getDec() {
+  return body.dec;
+}
+
 double Teensy_Ephemeris::getAltitude() {
-  return location.altitude;
+  return body.altitude;
+}
+
+double Teensy_Ephemeris::getAzimuth() {
+  return body.azimuth;
 }
 
 double Teensy_Ephemeris::calculateMoonPosition() {
@@ -484,6 +493,9 @@ double Teensy_Ephemeris::calculateMoonPosition() {
   if (dec > 180.0) {
     dec = dec - 360.0;
   }
+
+  body.RA  = ra;
+  body.dec = dec;
 
   if (debug) {
     Serial.print("       mglong: ");
