@@ -15,10 +15,6 @@ Teensy_Ephemeris::Teensy_Ephemeris() {
   debug = false;
 }
 
-int Teensy_Ephemeris::foocheck() {
-  return fooholder.var1 + fooholder.var2;
-}
-
 void Teensy_Ephemeris::setDebugging(bool _debug) {
   debug = _debug;
   getDebugging();

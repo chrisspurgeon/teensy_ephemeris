@@ -12,11 +12,6 @@
 
     #include "Arduino.h"
 
-    struct foo {
-        int var1;
-        int var2;
-    };
-
     struct planetbody {
         String name;
         double    RA;
@@ -45,13 +40,17 @@
 
         public:
             Teensy_Ephemeris();
-            foo fooholder;
             planetbody body;
             observertime time;
             observerLocation location;
+
+            // Debugging functions. Turn debugging on and off, and get the debugging status.
+            // Debugging is off by default.
             bool debug = false;
             void setDebugging(bool _debug);
             void getDebugging();
+
+            // Utility math and geometry functions
             double rev(double angle);
             double sind(double angle);
             double cosd(double angle);
@@ -59,36 +58,44 @@
             double asind(double c);
             double acosd(double c);
             double atan2d(double y, double x);
-            double getDayNumber(int year, int month, int day, double hours);
-            double determineJulianDate(int year, int month, int day, int hours, int minutes, int seconds);
-            void setLocalSiderialTime(int year, int month, int day, double hours,double longitude);
-            void setLocalSiderialTime();
-            double getLocalSiderialTime();
-            int foocheck();
+
+            // Time related functions
             void setTime(int year, int month, int day, int hours, int minutes, int seconds);
-            void setLocation(double latitude, double longitude);
-            double getLatitude();
-            double getLongitude();
-            void setLatitude(double latitude);
-            void setLongitude(double longitude);
-            void setJulianDate();
-            double getJulianDate();
-            void setRA(double ra);
-            void setDec(double dec);
-            double getRA();
-            double getDec();
-            double getAltitude();
-            double getAzimuth();
             int getYear();
             int getMonth();
             int getDay();
             int getHours();
             int getMinutes();
             int getSeconds();
+            double getDayNumber(int year, int month, int day, double hours);
+            void setJulianDate();
+            double getJulianDate();
+            double determineJulianDate(int year, int month, int day, int hours, int minutes, int seconds);
+            void setLocalSiderialTime(int year, int month, int day, double hours,double longitude);
+            void setLocalSiderialTime();
+            double getLocalSiderialTime();
+
+            // Observer location related functions
+            void setLocation(double latitude, double longitude);
+            double getLatitude();
+            double getLongitude();
+            void setLatitude(double latitude);
+            void setLongitude(double longitude);
+
+            // Functions to calculate body position in space, and location relative to the observer
+            void setRA(double ra);
+            void setDec(double dec);
+            double getRA();
+            double getDec();
+            double getAltitude();
+            double getAzimuth();
             void calculateMoonPosition();
             void calculateAltitudeAndAzimuth();
+
+            // Function to assign a name to the instance
             void setName(String);
             String getName();
+
         private:
             // int _pin;
     };
