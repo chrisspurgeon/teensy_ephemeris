@@ -468,9 +468,50 @@ double Teensy_Ephemeris::calculateMoonPosition() {
     Serial.println(Sb,12);
   }
 
+  // geocentric longitude, latitude and distance
+  double mglong = rev(LP + Sl / 1000000.0);
+  double mglat = rev(Sb / 1000000.0);
+  if (mglat > 180.0) {
+    mglat = mglat - 360.0;
+  }
+  double mr = round(385000.56 + Sr / 1000.0);
+
+  // Obliquity of Ecliptic
+  double obl = 23.4393 - 3.563E-7 * (time.JulianDate - 2451543.5);
+  // RA and dec
+  double ra = rev(atan2d(sind(mglong) * cosd(obl) - tand(mglat) * sind(obl), cosd(mglong))) / 15.0;
+  double dec = rev(asind(sind(mglat) * cosd(obl) + cosd(mglat) * sind(obl) * sind(mglong)));
+  if (dec > 180.0) {
+    dec = dec - 360.0;
+  }
+
+  if (debug) {
+    Serial.print("       mglong: ");
+    Serial.println(mglong,12);
+    Serial.print("       mglat: ");
+    Serial.println(mglat,12);
+    Serial.print("       mr: ");
+    Serial.println(mr,12);
+    Serial.print("       obl: ");
+    Serial.println(obl,12);
+    Serial.print("       ra: ");
+    Serial.println(ra,12);
+    Serial.print("       dec: ");
+    Serial.println(dec,12);
+  }
+
+  // phase angle
+  double pa = 180.0 - D - 6.289 * sind(MP) + 2.1 * sind(M) - 1.274 * sind(2 * D - MP) - 0.658 * sind(2 * D) - 0.214 * sind(2 * MP) - 0.11 * sind(D);
+
+  if (debug) {
+    Serial.print("       pa: ");
+    Serial.println(pa,12);
+  }
 
 
-
+  // // Altitude and azimuth
+  // var altaz=radtoaa(ra,dec,obs);
+  // return new Array(ra,dec,mr,altaz[0],altaz[1],rev(pa));
 
 
 
@@ -482,23 +523,5 @@ double Teensy_Ephemeris::calculateMoonPosition() {
 }
 
 /*
-  // geocentric longitude, latitude and distance
-  var mglong=rev(LP+Sl/1000000.0);
-  var mglat=rev(Sb/1000000.0);
-  if (mglat > 180.0) mglat=mglat-360;
-  var mr=Math.round(385000.56+Sr/1000.0);
-  // Obliquity of Ecliptic
-  var obl=23.4393-3.563E-7*(jdobs-2451543.5);
-  // RA and dec
-  var ra=rev(atan2d(sind(mglong)*cosd(obl)-tand(mglat)*sind(obl),
-                    cosd(mglong)))/15.0;
-  var dec=rev(asind(sind(mglat)*cosd(obl)+cosd(mglat)*sind(obl)*sind(mglong)));
-  if (dec > 180.0) dec=dec-360;
-  // phase angle
-  var pa=180.0-D-6.289*sind(MP)+2.1*sind(M)-1.274*sind(2*D-MP)
-         -0.658*sind(2*D)-0.214*sind(2*MP)-0.11*sind(D);
-  // Altitude and azimuth
-  var altaz=radtoaa(ra,dec,obs);
-  return new Array(ra,dec,mr,altaz[0],altaz[1],rev(pa));
 
 */
