@@ -15,7 +15,6 @@ Teensy_Ephemeris::Teensy_Ephemeris() {
   debug = false;
 }
 
-
 int Teensy_Ephemeris::foocheck() {
   return fooholder.var1 + fooholder.var2;
 }
@@ -261,7 +260,44 @@ double Teensy_Ephemeris::getAzimuth() {
   return body.azimuth;
 }
 
-double Teensy_Ephemeris::calculateMoonPosition() {
+
+// calculateAltitudeAndAzimuth converts ra and dec to altitude and azimuth
+void Teensy_Ephemeris::calculateAltitudeAndAzimuth() {
+  // First, update the local siderial time, and get the value
+  setLocalSiderialTime();
+  double lst = getLocalSiderialTime();
+  double x = cosd(15.0 * (lst - getRA())) * cosd(getDec());
+  double y = sind(15.0 * (lst - getRA())) * cosd(getDec());
+  double z = sind(getDec());
+  // rotate so z is the local zenith
+  double xhor = x * sind(getLatitude()) - z * cosd(getLatitude());
+  double yhor = y;
+  double zhor = x * cosd(getLatitude()) + z * sind(getLatitude());
+  double azimuth = rev(atan2d(yhor, xhor) + 180.0); // so 0 degrees is north
+  double altitude = atan2d(zhor, sqrt(xhor * xhor + yhor * yhor));
+  body.azimuth = azimuth;
+  body.altitude = altitude;
+  if (debug) {
+    Serial.println("DEBUG: calculateAltitudeAndAzimuth()");
+    Serial.print("       Azimuth: ");
+    Serial.println(body.azimuth, 10);
+    Serial.print("       Altitude: ");
+    Serial.println(body.altitude, 10);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void Teensy_Ephemeris::calculateMoonPosition() {
 
   unsigned char T45AD [60] = { 0, 2, 2, 0, 0, 0, 2, 2, 2, 2,
                                0, 1, 0, 2, 0, 0, 4, 0, 4, 2,
@@ -525,15 +561,5 @@ double Teensy_Ephemeris::calculateMoonPosition() {
   // var altaz=radtoaa(ra,dec,obs);
   // return new Array(ra,dec,mr,altaz[0],altaz[1],rev(pa));
 
-
-
-
-
-
-  return Sl;
-
+  calculateAltitudeAndAzimuth();
 }
-
-/*
-
-*/

@@ -85,7 +85,8 @@
             int getHours();
             int getMinutes();
             int getSeconds();
-            double calculateMoonPosition();
+            void calculateMoonPosition();
+            void calculateAltitudeAndAzimuth();
             void setName(String);
             String getName();
         private:

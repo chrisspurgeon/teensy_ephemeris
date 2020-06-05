@@ -16,15 +16,11 @@ void setup() {
   Serial.println(moon.getLongitude());
   Serial.println(moon.getLatitude());
 
-  moon.setLocation(-666.66, 6000000.66666);
+  moon.setLocation(51.47722222222222, 0.00);
   Serial.println(moon.getLongitude());
   Serial.println(moon.getLatitude());
 
-  double foo = moon.calculateMoonPosition();
-  Serial.println(foo,15 );
-
-
-
+  moon.calculateMoonPosition();
 
 }
 
