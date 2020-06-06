@@ -15,7 +15,18 @@ To install the library, download the .zip file for the library [here](https://gi
 
 Once the library is installed, add it to any Arduino sketch by choosing "Add Library" from the "Sketch" menu in the Arduino/Teensyduino IDE and selecting the library named "Teensy_Ephemeris". That should automatically add this line at the top of your sketch...
 
-`#include <Teensy_Ephemeris.h>`
+```C++
+#include <Teensy_Ephemeris.h>
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+```
 
 ## Using the library
 To use the library in your Arduino sketch, first create a new Teensy_Ephemeris object, like this...
@@ -24,6 +35,15 @@ To use the library in your Arduino sketch, first create a new Teensy_Ephemeris o
 #include <Teensy_Ephemeris.h>
 
 Teensy_Ephemeris myPlanet;
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
 ```
 
 You'll typically then provide the object with an observation time, and an observer's position on the earth...
@@ -31,6 +51,14 @@ You'll typically then provide the object with an observation time, and an observ
 #include <Teensy_Ephemeris.h>
 
 Teensy_Ephemeris myPlanet;
+void setup() {
+  // put your setup code here, to run once:
 myPlanet.setLocation(42.34625, -71.09775);
 myPlanet.setsetTime(2020,12,25,5,15,42);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
 ```
