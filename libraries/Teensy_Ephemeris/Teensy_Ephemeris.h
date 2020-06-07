@@ -15,8 +15,25 @@
 
     #include "Arduino.h"
 
+/** @struct planetbody
+ *  @brief This structure holds basic info about the planetary body, and its location in space.
+ *  @var planetbody::name 
+ *  Member 'name' holds the user assigned name of the body.
+ *  @var planetbody::RA
+ *  Member 'RA' holds the planetary body's right ascension.
+ *  @var planetbody::dec 
+ *  Member 'de' holds the planetary body's declination.
+ *  @var planetbody::altitude 
+ *  Member 'altitude' holds the planetary body's altitude in the sky in degrees above the horizon,
+ *  at the observer's location and observation time. Calculating it requres that observertime and observerLocation be set first.
+ *  @var planetbody::azimuth 
+ *  Member 'azimuth' holds the planetary body's direction from the observer at the observer's location 
+ *  and observation time. Calculating it requres that observertime and observerLocation be set first. 
+ *  NOTE: This is true direction, not compass direction. To convert true direction to
+ *  a magnetic compass heading, see https://en.wikipedia.org/wiki/TVMDC .
+ */
     struct planetbody {
-        String name;
+        String    name;
         double    RA;
         double    dec;
         double    altitude;
@@ -30,8 +47,8 @@
  *  Member 'year' holds the year of the observation time.
  *  @var observertime::month 
  *  Member 'month' holds the month of the observation time.
- *  @var observertime::days 
- *  Member 'days' holds the day of the month of the observation time.
+ *  @var observertime::day 
+ *  Member 'day' holds the day of the month of the observation time.
  *  @var observertime::hours 
  *  Member 'hours' holds the hour of the observation time.
  *  @var observertime::minutes 
@@ -83,7 +100,18 @@
 
             // Debugging functions. Turn debugging on and off, and get the debugging status.
             // Debugging is off by default.
+
             bool debug = false;
+
+/**************************************************************************/
+/*!
+    @brief  Toggles debugging on and off.
+            When debugging is on, calculated values (including intermediary values 
+            created during calculation) are outputted via the Serial buffer.
+    @param    _debug
+              Boolean true/false value indicating whether debugging should be on or off.
+*/
+/**************************************************************************/
             void setDebugging(bool _debug);
             void getDebugging();
 
