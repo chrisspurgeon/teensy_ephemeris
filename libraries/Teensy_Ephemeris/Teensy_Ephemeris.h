@@ -1,11 +1,14 @@
-/*
-  Teensy_Ephemeris.h - Library for doing astronomical calculations.
-
-  REQUIRES Teensy or other Arduino-compatable microprocessor with true "double" datatype.
-  Created by Chris Spurgeon
-  https://github.com/chrisspurgeon/teensy_ephemeris
-
-*/
+/*!
+ * @file Teensy_Ephemeris.h
+ *
+ * This is part of Teensy_Ephemeris, a library for calculating
+ * positions of the sun, moon, and planets. It is designed to work
+ * with the Teensy microcontrollers (https://www.pjrc.com/teensy), 
+ * starting with version 4.0.
+ *
+ * GNU General Public License (GPL) version 3. License details at https://www.gnu.org/licenses/gpl-3.0.html
+ *
+ */
 
 #ifndef Teensy_Ephemeris_H
 #define Teensy_Ephemeris_H
@@ -20,6 +23,27 @@
         double    azimuth;
     };
 
+/** @struct observertime
+ *  @brief This structure holds the time to be used for all position calculations. 
+ *  NOTE: Time is UTC, not local observer time.
+ *  @var observertime::year 
+ *  Member 'year' holds the year of the observation time.
+ *  @var observertime::month 
+ *  Member 'month' holds the month of the observation time.
+ *  @var observertime::days 
+ *  Member 'days' holds the day of the month of the observation time.
+ *  @var observertime::hours 
+ *  Member 'hours' holds the hour of the observation time.
+ *  @var observertime::minutes 
+ *  Member 'minutes' holds the minute of the observation time.
+ *  @var observertime::seconds 
+ *  Member 'seconds' holds the seconds of the observation time.
+ *  @var observertime::JulianDate 
+ *  Member 'JulianDate' holds the calculated Julian date of the observation.
+ *  @var observertime::localSiderialTime 
+ *  Member 'localSiderialTime' holds the local siderial time of the observation.
+ *  Calculating it requires that an observer location has been set.
+ */
     struct observertime {
         int year;
         int month;
@@ -31,11 +55,24 @@
         double localSiderialTime;
     };
 
+/** @struct observerLocation
+ *  @brief This structure holds the observer's latitude and longitude
+ *  @var observerLocation::latitude 
+ *  Member 'latitude' holds the observer's latitude
+ *  @var observerLocation::longitude 
+ *  Member 'longitude' holds the observer's longitude
+ */
     struct observerLocation {
         double latitude = 34.225;
         double longitude = -118.236944;
     };
 
+
+/**************************************************************************/
+/*! 
+    @brief  Class that stores the information about the planetary body.
+*/
+/**************************************************************************/
     class Teensy_Ephemeris {
 
         public:

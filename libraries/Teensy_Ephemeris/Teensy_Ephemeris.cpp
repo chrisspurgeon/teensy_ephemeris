@@ -1,11 +1,32 @@
-/*
-  Teensy_Ephemeris.cpp - Library for doing astronomical calculations.
+/*!
+ * @file Teensy_Ephemeris.cpp
+ *
+ * @mainpage Ephemeris calculations for Teensy 4.x microcontrollers
+ *
+ * @section intro_sec Introduction
+ *
+ * This is the documentation for Teensy_Ephemeris, a library for calculating
+ * positions of the sun, moon, and planets. It is designed to work
+ * with the Teensy microcontrollers (https://www.pjrc.com/teensy), starting with version 4.0.
+ * While this code will compile and run on standard Arduino boards, such as the Arduino UNO, 
+ * those boards do not have the necessary aritmetic precision for the required calculations.
+ * Because of that, results obtained on boards such as the UNO may be inaccurate.
+ *
+ * @section dependencies Dependencies
+ *
+ * This library requires a Teensy board, version 4.0 or later. IT WILL NOT WORK PROPERLY
+ * ON A STANDARD ARDUINO BOARD!
+ *
+ * @section author Author
+ *
+ * Written by Chris Spurgeon (chris@spurgeonworld.com)
+ *
+ * @section license License
+ *
+ * GNU General Public License (GPL) version 3. License details at https://www.gnu.org/licenses/gpl-3.0.html
+ *
+ */
 
-  REQUIRES Teensy or other Arduino-compatable microprocessor with true "double" datatype.
-  Created by Chris Spurgeon
-  https://github.com/chrisspurgeon/teensy_ephemeris
-
-*/
 
 #include "Arduino.h"
 #include "Teensy_Ephemeris.h"
