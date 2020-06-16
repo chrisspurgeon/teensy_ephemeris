@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['getaltitude_14',['getAltitude',['../class_teensy___ephemeris.html#a11c45d992f510ebaecaecfa902aa0910',1,'Teensy_Ephemeris']]],
+  ['getazimuth_15',['getAzimuth',['../class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab',1,'Teensy_Ephemeris']]],
+  ['getday_16',['getDay',['../class_teensy___ephemeris.html#af276adcc19ce53e992adde55c8d08226',1,'Teensy_Ephemeris']]],
+  ['getdaynumber_17',['getDayNumber',['../class_teensy___ephemeris.html#a574dcfcb98bfbceebb3f40d54681db84',1,'Teensy_Ephemeris']]],
+  ['getdebugging_18',['getDebugging',['../class_teensy___ephemeris.html#adcb44c56d1c3c735ea42d042f8a5cb3d',1,'Teensy_Ephemeris']]],
+  ['getdec_19',['getDec',['../class_teensy___ephemeris.html#a4ad0b6e490f5c5f91aee7cf31789efda',1,'Teensy_Ephemeris']]],
+  ['gethours_20',['getHours',['../class_teensy___ephemeris.html#a21128709a8de09917313032ff77093ab',1,'Teensy_Ephemeris']]],
+  ['getjuliandate_21',['getJulianDate',['../class_teensy___ephemeris.html#a604c909fa20428ff90e0201550852a5b',1,'Teensy_Ephemeris']]],
+  ['getlatitude_22',['getLatitude',['../class_teensy___ephemeris.html#a0a54148e332698025fe53456901787b5',1,'Teensy_Ephemeris']]],
+  ['getlocalsiderialtime_23',['getLocalSiderialTime',['../class_teensy___ephemeris.html#a2ed9741f014027766411408cadcf97c3',1,'Teensy_Ephemeris']]],
+  ['getlongitude_24',['getLongitude',['../class_teensy___ephemeris.html#a224472ed1ad43ece0d4796febe682d18',1,'Teensy_Ephemeris']]],
+  ['getminutes_25',['getMinutes',['../class_teensy___ephemeris.html#a1762fb259fb667f7b879a8aeee99adc7',1,'Teensy_Ephemeris']]],
+  ['getmonth_26',['getMonth',['../class_teensy___ephemeris.html#a4bac17934d127c57d6748e0a4fd2effc',1,'Teensy_Ephemeris']]],
+  ['getname_27',['getName',['../class_teensy___ephemeris.html#ab58998417244cabf08d37ef089eed5fb',1,'Teensy_Ephemeris']]],
+  ['getra_28',['getRA',['../class_teensy___ephemeris.html#a3eb5b9fd6a1b147248293dae20e07ee1',1,'Teensy_Ephemeris']]],
+  ['getseconds_29',['getSeconds',['../class_teensy___ephemeris.html#a41f3ca4f8cf8c1cde62e2d424959f385',1,'Teensy_Ephemeris']]],
+  ['getyear_30',['getYear',['../class_teensy___ephemeris.html#ad81000d8233661f3155f2222d22fa145',1,'Teensy_Ephemeris']]]
+];
