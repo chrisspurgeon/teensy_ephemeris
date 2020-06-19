@@ -451,23 +451,6 @@
 /**************************************************************************/
             double getAzimuth();
 
-/**************************************************************************/
-/*!
-    @brief  Calculates the position of the moon, given a location and time.
-
-    To do the calculation the time and observer location needs to be set. Make
-    sure to do that if you haven't already. The calculation determines the
-    moon's altitude in the sky and bearing from the observation position.
-
-    Those values can then be retrieved with the getAltitude() and getAzimuth()
-    functions.
-
-    If debugging is on, the function will output the intermediate calculations
-    via the Serial buffer.
-*/
-/**************************************************************************/
-            void calculateMoonPosition();
-
 
 /**************************************************************************/
 /*!
@@ -511,6 +494,19 @@
 */
 /**************************************************************************/
             String getName();
+
+
+
+
+
+/**************************************************************************/
+/*!
+    Moon position function is in Moon.h and Moon.cpp
+
+*/
+/**************************************************************************/
+
+#include "Moon.h"
 
         private:
             // int _pin;
