@@ -1,4 +1,3 @@
-
 #include "Teensy_Ephemeris.h"
 
 void Teensy_Ephemeris::calculateMoonPosition() {
