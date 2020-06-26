@@ -30,13 +30,11 @@ void setup() {
 // and location.
   moon.calculateMoonPosition();
 
-// Finally, let's output the altitude (the angle between the moon and the horizon).
-// An altitude of zero means the moon is on the horizon, an altitude of 90 means it's
-// directly overhead.),
-  Serial.println(moon.getAltitude(),5);
+// Finally, let's output the moon's altitude (how high the moon is above the horizon) in degrees.
+  Serial.println(moon.getAltitude());
 
-// And output the azimuth(which direction to face to see the moon. 0 is north, 90 is east, etc.).
-  Serial.println(moon.getAzimuth(),5);
+// And output the azimuth (which direction (in degrees) to face to see the moon. 0 is north, 90 is east, etc.).
+  Serial.println(moon.getAzimuth());
 
 }
 
