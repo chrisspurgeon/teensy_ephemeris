@@ -12,7 +12,7 @@
 //         {"foo",{0.0, 1.1, 2.2, 3.3}}
 //     };
 
-planetData MERCURY = {"MERCURY",
+planetData MERCURYDATA = {"MERCURY",
     {
         { 252.250906,    149474.0722491,    0.00030397,    0.000000018},
         {   0.387098310,      0.0,          0.0,           0.0},
@@ -23,7 +23,7 @@ planetData MERCURY = {"MERCURY",
     }
 };
 
-planetData VENUS = {"VENUS",
+planetData VENUSDATA = {"VENUS",
     {
         { 181.979801,    58519.2130302,   0.00031060,    0.000000015},
         {   0.723329820,   0.0,           0.0,           0.0},
@@ -34,7 +34,7 @@ planetData VENUS = {"VENUS",
     }
 };
 
-planetData EARTH = {"EARTH",
+planetData EARTHDATA = {"EARTH",
     {
         {100.466449,    36000.7698231,    0.00030368,    0.00000002},
         {  1.000001018,     0.0,          0.0,           0.0},
@@ -45,7 +45,7 @@ planetData EARTH = {"EARTH",
     }
 };
 
-planetData MARS = {"MARS",
+planetData MARSDATA = {"MARS",
     {
         {355.433275,    19141.6964746,    0.00031097,    0.000000015},
         {  1.523679342,     0.0,          0.0,           0.0},
@@ -56,7 +56,7 @@ planetData MARS = {"MARS",
     }
 };
 
-planetData JUPITER = {"JUPITER",
+planetData JUPITERDATA = {"JUPITER",
     {
         { 34.351484,   3036.3027889,    0.00022374,    0.000000025},
         {  5.202603191,   0.0000001913, 0.0,           0.0},
@@ -67,7 +67,7 @@ planetData JUPITER = {"JUPITER",
     }
 };
 
-planetData SATURN = {"SATURN",
+planetData SATURNDATA = {"SATURN",
     {
         { 50.077471,   1223.5110141,    0.00051952,   -0.000000003},
         {  9.554909596,  -0.0000021389, 0.0,           0.0},
@@ -78,7 +78,7 @@ planetData SATURN = {"SATURN",
     }
 };
 
-planetData URANUS = {"URANUS",
+planetData URANUSDATA = {"URANUS",
     {
         {314.055005,    429.8640561,    0.00030434,    0.000000026},
         { 19.218446062,  -0.0000000372, 0.00000000098, 0.0},
@@ -89,7 +89,7 @@ planetData URANUS = {"URANUS",
     }
 };
 
-planetData NEPTUNE = {"NEPTUNE",
+planetData NEPTUNEDATA = {"NEPTUNE",
     {
         {304.348665,    219.8833092,    0.00030926,    0.000000018},
         { 30.110386869,  -0.0000001663, 0.00000000069, 0.0},
@@ -101,7 +101,7 @@ planetData NEPTUNE = {"NEPTUNE",
 };
 
 
-
+PlanetsData planets = {MERCURYDATA, VENUSDATA, EARTHDATA, MARSDATA, JUPITERDATA, SATURNDATA, URANUSDATA, NEPTUNEDATA};
 
 // planetData planet2 = {"foo",{0.0, 1.1, 2.2, 3.3}};
 // planetData planet3 = {"foo",{0.0, 1.1, 2.2, 3.3}};

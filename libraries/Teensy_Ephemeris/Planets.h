@@ -34,3 +34,6 @@ struct planetData {
 struct PlanetsData {
     planetData planet[8];
 };
+
+
+enum {MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE} planet;
