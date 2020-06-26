@@ -13,11 +13,24 @@
 #include "Arduino.h"
 
 
+/** @struct planetData
+ *  @brief This structure the orbital elements for an individual planet.
+ *  @var planetData::name
+ *  The planet name, in all caps (e.g. "NEPTUNE").
+ *  @var planetData::element
+ *  Two-dimensional array holding 24 orbital elements for the planet.
+ */
 struct planetData {
     String name;
-    double element[4];
+    double element[6][4];
 };
 
+/** @struct PlanetsData
+ *  @brief This structure contains an array of objects containing the unique orbital parameters for 
+ *  the eight planets (sorry Pluto).
+ *  @var PlanetsData::planet
+ *  Orbital parameters for an individual planet.
+ */
 struct PlanetsData {
     planetData planet[8];
 };
