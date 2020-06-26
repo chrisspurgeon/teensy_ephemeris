@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['juliandate_112',['JulianDate',['../structobservertime.html#acf2d30c3c29607b6ea63b8f7f1c7bcfe',1,'observertime']]]
+  ['hours_122',['hours',['../structobservertime.html#af4136da161813020e9cb2c957761f58a',1,'observertime']]]
 ];

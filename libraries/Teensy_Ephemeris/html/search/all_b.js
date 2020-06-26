@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['observerlocation_40',['observerLocation',['../structobserver_location.html',1,'']]],
-  ['observertime_41',['observertime',['../structobservertime.html',1,'']]]
+  ['observerlocation_42',['observerLocation',['../structobserver_location.html',1,'']]],
+  ['observertime_43',['observertime',['../structobservertime.html',1,'']]]
 ];

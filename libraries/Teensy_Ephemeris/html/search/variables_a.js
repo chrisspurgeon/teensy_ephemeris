@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_122',['time',['../class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b',1,'Teensy_Ephemeris']]]
+  ['ra_132',['RA',['../structplanetbody.html#a431ac1dd23dcfeb07aa4a0bbdcb18013',1,'planetbody']]]
 ];

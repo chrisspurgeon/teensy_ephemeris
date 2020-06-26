@@ -240,36 +240,51 @@ $(function() {
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">getAzimuth</a>();</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a475664b7e1fc21ba38189a3185027c5e">calculateMoonPosition</a>();</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">calculateAltitudeAndAzimuth</a>();</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            <span class="comment">// Functions to assign a name to the instance</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">calculateAltitudeAndAzimuth</a>();</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a775bf441a4248a0692eb662521221bfd">setName</a>(String);</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="comment">// Functions to assign a name to the instance</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a775bf441a4248a0692eb662521221bfd">setName</a>(String);</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            String <a class="code" href="class_teensy___ephemeris.html#ab58998417244cabf08d37ef089eed5fb">getName</a>();</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            String <a class="code" href="class_teensy___ephemeris.html#ab58998417244cabf08d37ef089eed5fb">getName</a>();</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;            <span class="comment">// int _pin;</span></div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    };</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_moon_8h.html">Moon.h</a>&quot;</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_planets_8h.html">Planets.h</a>&quot;</span></div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160; </div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            <span class="comment">// int _pin;</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    };</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_teensy___ephemeris_html"><div class="ttname"><a href="class_teensy___ephemeris.html">Teensy_Ephemeris</a></div><div class="ttdoc">Class that stores the information about the planetary body.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:97</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a0c0da421adfd79b50665b33701473dab"><div class="ttname"><a href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">Teensy_Ephemeris::getAzimuth</a></div><div class="ttdeci">double getAzimuth()</div><div class="ttdoc">Gets the bearing of the object.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:276</div></div>
@@ -286,6 +301,7 @@ $(function() {
 <div class="ttc" id="aclass_teensy___ephemeris_html_aaa7181a37592002baeafd2c4cdd74b1b"><div class="ttname"><a href="class_teensy___ephemeris.html#aaa7181a37592002baeafd2c4cdd74b1b">Teensy_Ephemeris::setDec</a></div><div class="ttdeci">void setDec(double dec)</div><div class="ttdoc">Sets the declination.</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a41f3ca4f8cf8c1cde62e2d424959f385"><div class="ttname"><a href="class_teensy___ephemeris.html#a41f3ca4f8cf8c1cde62e2d424959f385">Teensy_Ephemeris::getSeconds</a></div><div class="ttdeci">int getSeconds()</div><div class="ttdoc">Returns the stored seconds.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:202</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a65f57d01d99f0e56b0e9370673e9539a"><div class="ttname"><a href="class_teensy___ephemeris.html#a65f57d01d99f0e56b0e9370673e9539a">Teensy_Ephemeris::setDebugging</a></div><div class="ttdeci">void setDebugging(bool _debug)</div><div class="ttdoc">Toggles debugging on and off. When debugging is on, calculated values (including intermediary values ...</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:39</div></div>
+<div class="ttc" id="a_planets_8h_html"><div class="ttname"><a href="_planets_8h.html">Planets.h</a></div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a574dcfcb98bfbceebb3f40d54681db84"><div class="ttname"><a href="class_teensy___ephemeris.html#a574dcfcb98bfbceebb3f40d54681db84">Teensy_Ephemeris::getDayNumber</a></div><div class="ttdeci">double getDayNumber(int year, int month, int day, double hours)</div><div class="ttdoc">Calculates the Julian day number. Assumes UTC time.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:83</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_af276adcc19ce53e992adde55c8d08226"><div class="ttname"><a href="class_teensy___ephemeris.html#af276adcc19ce53e992adde55c8d08226">Teensy_Ephemeris::getDay</a></div><div class="ttdeci">int getDay()</div><div class="ttdoc">Returns the stored day.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:190</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a224472ed1ad43ece0d4796febe682d18"><div class="ttname"><a href="class_teensy___ephemeris.html#a224472ed1ad43ece0d4796febe682d18">Teensy_Ephemeris::getLongitude</a></div><div class="ttdeci">double getLongitude()</div><div class="ttdoc">Returns the stored longitude.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:256</div></div>
@@ -329,8 +345,8 @@ $(function() {
 <div class="ttc" id="aclass_teensy___ephemeris_html_a2b41002eee1c08f3aa44316c416fb4bc"><div class="ttname"><a href="class_teensy___ephemeris.html#a2b41002eee1c08f3aa44316c416fb4bc">Teensy_Ephemeris::setLatitude</a></div><div class="ttdeci">void setLatitude(double latitude)</div><div class="ttdoc">Stores the latitude.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:240</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a327e88dbfb66c2aae7b1232906be19f5"><div class="ttname"><a href="class_teensy___ephemeris.html#a327e88dbfb66c2aae7b1232906be19f5">Teensy_Ephemeris::setJulianDate</a></div><div class="ttdeci">void setJulianDate()</div><div class="ttdoc">Calculates the Julian date, using the stored time values. Stores the value in the planet object.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:171</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a4bac17934d127c57d6748e0a4fd2effc"><div class="ttname"><a href="class_teensy___ephemeris.html#a4bac17934d127c57d6748e0a4fd2effc">Teensy_Ephemeris::getMonth</a></div><div class="ttdeci">int getMonth()</div><div class="ttdoc">Returns the stored month.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:186</div></div>
+<div class="ttc" id="a_moon_8h_html"><div class="ttname"><a href="_moon_8h.html">Moon.h</a></div></div>
 <div class="ttc" id="astructobservertime_html_a00a5598916e3220bacea557cd37e5db1"><div class="ttname"><a href="structobservertime.html#a00a5598916e3220bacea557cd37e5db1">observertime::month</a></div><div class="ttdeci">int month</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:66</div></div>
-<div class="ttc" id="aclass_teensy___ephemeris_html_a475664b7e1fc21ba38189a3185027c5e"><div class="ttname"><a href="class_teensy___ephemeris.html#a475664b7e1fc21ba38189a3185027c5e">Teensy_Ephemeris::calculateMoonPosition</a></div><div class="ttdeci">void calculateMoonPosition()</div><div class="ttdoc">Calculates the position of the moon, given a location and time.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:311</div></div>
 <div class="ttc" id="astructobservertime_html"><div class="ttname"><a href="structobservertime.html">observertime</a></div><div class="ttdoc">This structure holds the time to be used for all position calculations. NOTE: Time is UTC,...</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:64</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -187,9 +187,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a0c0da421adfd79b50665b33701473dab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">getAzimuth</a> ()</td></tr>
 <tr class="memdesc:a0c0da421adfd79b50665b33701473dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bearing of the object.  <a href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">More...</a><br /></td></tr>
 <tr class="separator:a0c0da421adfd79b50665b33701473dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a475664b7e1fc21ba38189a3185027c5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teensy___ephemeris.html#a475664b7e1fc21ba38189a3185027c5e">calculateMoonPosition</a> ()</td></tr>
-<tr class="memdesc:a475664b7e1fc21ba38189a3185027c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the position of the moon, given a location and time.  <a href="class_teensy___ephemeris.html#a475664b7e1fc21ba38189a3185027c5e">More...</a><br /></td></tr>
-<tr class="separator:a475664b7e1fc21ba38189a3185027c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a881c56b70d817d173c6b8ff96749616f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">calculateAltitudeAndAzimuth</a> ()</td></tr>
 <tr class="memdesc:a881c56b70d817d173c6b8ff96749616f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the position of an object in the sky.  <a href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">More...</a><br /></td></tr>
 <tr class="separator:a881c56b70d817d173c6b8ff96749616f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1108,28 +1105,6 @@ Public Attributes</h2></td></tr>
 <p>Gets the bearing of the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bearing of the object. Straight north is 0.0, south is 180.0, etc.</dd></dl>
 <p>NOTE: This bearing is based on true north. If you are using a magnetic compass in conjunction with this bearing, make sure to take magnetic declination into account. </p>
-
-</div>
-</div>
-<a id="a475664b7e1fc21ba38189a3185027c5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a475664b7e1fc21ba38189a3185027c5e">&#9670;&nbsp;</a></span>calculateMoonPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Teensy_Ephemeris::calculateMoonPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculates the position of the moon, given a location and time. </p>
-<p>To do the calculation the time and observer location needs to be set. Make sure to do that if you haven't already. The calculation determines the moon's altitude in the sky and bearing from the observation position.</p>
-<p>Those values can then be retrieved with the <a class="el" href="class_teensy___ephemeris.html#a11c45d992f510ebaecaecfa902aa0910" title="Gets the altitude of the object above the horizon.">getAltitude()</a> and <a class="el" href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab" title="Gets the bearing of the object.">getAzimuth()</a> functions.</p>
-<p>If debugging is on, the function will output the intermediate calculations via the Serial buffer. </p>
 
 </div>
 </div>

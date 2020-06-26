@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['latitude_113',['latitude',['../structobserver_location.html#a0c30ce36d1d72ced410bd5f14747c807',1,'observerLocation']]],
-  ['localsiderialtime_114',['localSiderialTime',['../structobservertime.html#a893a04a9ce725ae8320e85441a21df9f',1,'observertime']]],
-  ['location_115',['location',['../class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff',1,'Teensy_Ephemeris']]],
-  ['longitude_116',['longitude',['../structobserver_location.html#a6dfb6707d1f75278f4cd4718fe9e6ea5',1,'observerLocation']]]
+  ['juliandate_123',['JulianDate',['../structobservertime.html#acf2d30c3c29607b6ea63b8f7f1c7bcfe',1,'observertime']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['minutes_117',['minutes',['../structobservertime.html#abdbfdee0c66d5e70cf81f5b9f4a78cf9',1,'observertime']]],
-  ['month_118',['month',['../structobservertime.html#a00a5598916e3220bacea557cd37e5db1',1,'observertime']]]
+  ['latitude_124',['latitude',['../structobserver_location.html#a0c30ce36d1d72ced410bd5f14747c807',1,'observerLocation']]],
+  ['localsiderialtime_125',['localSiderialTime',['../structobservertime.html#a893a04a9ce725ae8320e85441a21df9f',1,'observertime']]],
+  ['location_126',['location',['../class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff',1,'Teensy_Ephemeris']]],
+  ['longitude_127',['longitude',['../structobserver_location.html#a6dfb6707d1f75278f4cd4718fe9e6ea5',1,'observerLocation']]]
 ];

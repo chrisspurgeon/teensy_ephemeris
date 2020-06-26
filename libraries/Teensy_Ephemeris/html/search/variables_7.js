@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['name_119',['name',['../structplanetbody.html#a5def6cf26c16265290256b6bbc07642c',1,'planetbody']]]
+  ['minutes_128',['minutes',['../structobservertime.html#abdbfdee0c66d5e70cf81f5b9f4a78cf9',1,'observertime']]],
+  ['month_129',['month',['../structobservertime.html#a00a5598916e3220bacea557cd37e5db1',1,'observertime']]]
 ];
