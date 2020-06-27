@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['seconds_133',['seconds',['../structobservertime.html#a66d1b19e510b756670c703d7d37d4da8',1,'observertime']]]
+  ['ra_136',['RA',['../structplanetbody.html#a431ac1dd23dcfeb07aa4a0bbdcb18013',1,'planetbody']]]
 ];

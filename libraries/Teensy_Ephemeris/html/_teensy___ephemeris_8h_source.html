@@ -98,196 +98,219 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html">   97</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_teensy___ephemeris.html">Teensy_Ephemeris</a> {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="class_teensy___ephemeris.html#a076bd82cbfd676d67bd1d3d3bd261070">Teensy_Ephemeris</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#a97d5f79d04f55bf48610fb413261f94b">  102</a></span>&#160;            <a class="code" href="structplanetbody.html">planetbody</a> <a class="code" href="class_teensy___ephemeris.html#a97d5f79d04f55bf48610fb413261f94b">body</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b">  103</a></span>&#160;            <a class="code" href="structobservertime.html">observertime</a> <a class="code" href="class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b">time</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff">  104</a></span>&#160;            <a class="code" href="structobserver_location.html">observerLocation</a> <a class="code" href="class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff">location</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// Debugging functions. Turn debugging on and off, and get the debugging status.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// Debugging is off by default.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html">   99</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_teensy___ephemeris.html">Teensy_Ephemeris</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_planets_8h.html">Planets.h</a>&quot;</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#af55795b3a2d0ea6ab37686679b9ea6b5">  111</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_teensy___ephemeris.html#af55795b3a2d0ea6ab37686679b9ea6b5">debug</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a65f57d01d99f0e56b0e9370673e9539a">setDebugging</a>(<span class="keywordtype">bool</span> _debug);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#adcb44c56d1c3c735ea42d042f8a5cb3d">getDebugging</a>();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">// Utility math and geometry functions</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2ab66bfb79f8ffbdcc38273f608189b3">rev</a>(<span class="keywordtype">double</span> angle);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2b5459f3bd12bae5cb63853c3eced472">sind</a>(<span class="keywordtype">double</span> angle);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="class_teensy___ephemeris.html#a076bd82cbfd676d67bd1d3d3bd261070">Teensy_Ephemeris</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#a97d5f79d04f55bf48610fb413261f94b">  114</a></span>&#160;            <a class="code" href="structplanetbody.html">planetbody</a> <a class="code" href="class_teensy___ephemeris.html#a97d5f79d04f55bf48610fb413261f94b">body</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b">  115</a></span>&#160;            <a class="code" href="structobservertime.html">observertime</a> <a class="code" href="class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b">time</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff">  116</a></span>&#160;            <a class="code" href="structobserver_location.html">observerLocation</a> <a class="code" href="class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff">location</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#a35d3b1712395c946ef0e1572ccdb6d4f">  117</a></span>&#160;            <a class="code" href="structplanet_data.html">planetData</a> <a class="code" href="class_teensy___ephemeris.html#a35d3b1712395c946ef0e1572ccdb6d4f">orbitalElements</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// Debugging functions. Turn debugging on and off, and get the debugging status.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// Debugging is off by default.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#af55795b3a2d0ea6ab37686679b9ea6b5">  128</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_teensy___ephemeris.html#af55795b3a2d0ea6ab37686679b9ea6b5">debug</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a65f57d01d99f0e56b0e9370673e9539a">setDebugging</a>(<span class="keywordtype">bool</span> _debug);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#adcb44c56d1c3c735ea42d042f8a5cb3d">getDebugging</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">// Utility math and geometry functions</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a65fff9e4ac9f83cb5bf22d627b761a7b">cosd</a>(<span class="keywordtype">double</span> angle);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2ab66bfb79f8ffbdcc38273f608189b3">rev</a>(<span class="keywordtype">double</span> angle);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a1856d9d33ddd03d754b6fa8e6387ee9a">tand</a>(<span class="keywordtype">double</span> angle);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a49917b1ebf451612e99b54d309117b9e">asind</a>(<span class="keywordtype">double</span> c);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2f82bf72a61f7951c3b79aeb88250377">acosd</a>(<span class="keywordtype">double</span> c);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#aff99aa12019acafbaf164000edb67f8e">atan2d</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> x);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2b5459f3bd12bae5cb63853c3eced472">sind</a>(<span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a65fff9e4ac9f83cb5bf22d627b761a7b">cosd</a>(<span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a1856d9d33ddd03d754b6fa8e6387ee9a">tand</a>(<span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a49917b1ebf451612e99b54d309117b9e">asind</a>(<span class="keywordtype">double</span> c);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// Time related functions</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#ae33154fa8e9e66dfcb69913671621b57">setTime</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">int</span> hours, <span class="keywordtype">int</span> minutes, <span class="keywordtype">int</span> seconds);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2f82bf72a61f7951c3b79aeb88250377">acosd</a>(<span class="keywordtype">double</span> c);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#aff99aa12019acafbaf164000edb67f8e">atan2d</a>(<span class="keywordtype">double</span> y, <span class="keywordtype">double</span> x);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#ad81000d8233661f3155f2222d22fa145">getYear</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">// Time related functions</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a4bac17934d127c57d6748e0a4fd2effc">getMonth</a>();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#af276adcc19ce53e992adde55c8d08226">getDay</a>();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a21128709a8de09917313032ff77093ab">getHours</a>();</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a1762fb259fb667f7b879a8aeee99adc7">getMinutes</a>();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a41f3ca4f8cf8c1cde62e2d424959f385">getSeconds</a>();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a574dcfcb98bfbceebb3f40d54681db84">getDayNumber</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">double</span> hours);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a327e88dbfb66c2aae7b1232906be19f5">setJulianDate</a>();</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a604c909fa20428ff90e0201550852a5b">getJulianDate</a>();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a549bee8b5f28e04fe785e7d220f234fe">determineJulianDate</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">int</span> hours, <span class="keywordtype">int</span> minutes, <span class="keywordtype">int</span> seconds);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#ae33154fa8e9e66dfcb69913671621b57">setTime</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">int</span> hours, <span class="keywordtype">int</span> minutes, <span class="keywordtype">int</span> seconds);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#ad81000d8233661f3155f2222d22fa145">getYear</a>();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a4bac17934d127c57d6748e0a4fd2effc">getMonth</a>();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#af276adcc19ce53e992adde55c8d08226">getDay</a>();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a21128709a8de09917313032ff77093ab">getHours</a>();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a1762fb259fb667f7b879a8aeee99adc7">getMinutes</a>();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="class_teensy___ephemeris.html#a41f3ca4f8cf8c1cde62e2d424959f385">getSeconds</a>();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a574dcfcb98bfbceebb3f40d54681db84">getDayNumber</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">double</span> hours);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a327e88dbfb66c2aae7b1232906be19f5">setJulianDate</a>();</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#ae56595f3a8e7df825e35ba58b78f0a8c">setLocalSiderialTime</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">double</span> hours, <span class="keywordtype">double</span> longitude);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#ae56595f3a8e7df825e35ba58b78f0a8c">setLocalSiderialTime</a>();</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2ed9741f014027766411408cadcf97c3">getLocalSiderialTime</a>();</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="comment">// Observer location related functions</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a604c909fa20428ff90e0201550852a5b">getJulianDate</a>();</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a549bee8b5f28e04fe785e7d220f234fe">determineJulianDate</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">int</span> hours, <span class="keywordtype">int</span> minutes, <span class="keywordtype">int</span> seconds);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#ae56595f3a8e7df825e35ba58b78f0a8c">setLocalSiderialTime</a>(<span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month, <span class="keywordtype">int</span> day, <span class="keywordtype">double</span> hours, <span class="keywordtype">double</span> longitude);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a35e65698cbc85a9e30f3c71deff17a37">setLocation</a>(<span class="keywordtype">double</span> latitude, <span class="keywordtype">double</span> longitude);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#ae56595f3a8e7df825e35ba58b78f0a8c">setLocalSiderialTime</a>();</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a0a54148e332698025fe53456901787b5">getLatitude</a>();</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a2ed9741f014027766411408cadcf97c3">getLocalSiderialTime</a>();</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a224472ed1ad43ece0d4796febe682d18">getLongitude</a>();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment">// Observer location related functions</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a2b41002eee1c08f3aa44316c416fb4bc">setLatitude</a>(<span class="keywordtype">double</span> latitude);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#aae35ed6a651deeeed6a4daaf83308a5a">setLongitude</a>(<span class="keywordtype">double</span> longitude);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="comment">// Functions to calculate body position in space, and location relative to the observer</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#adf99abe7808896d091751a56f3114ce8">  407</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#adf99abe7808896d091751a56f3114ce8">setRA</a>(<span class="keywordtype">double</span> ra);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a35e65698cbc85a9e30f3c71deff17a37">setLocation</a>(<span class="keywordtype">double</span> latitude, <span class="keywordtype">double</span> longitude);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a0a54148e332698025fe53456901787b5">getLatitude</a>();</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a224472ed1ad43ece0d4796febe682d18">getLongitude</a>();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00416"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#aaa7181a37592002baeafd2c4cdd74b1b">  416</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#aaa7181a37592002baeafd2c4cdd74b1b">setDec</a>(<span class="keywordtype">double</span> dec);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a2b41002eee1c08f3aa44316c416fb4bc">setLatitude</a>(<span class="keywordtype">double</span> latitude);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a3eb5b9fd6a1b147248293dae20e07ee1">getRA</a>();</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#aae35ed6a651deeeed6a4daaf83308a5a">setLongitude</a>(<span class="keywordtype">double</span> longitude);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a4ad0b6e490f5c5f91aee7cf31789efda">getDec</a>();</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="comment">// Functions to calculate planetary body&#39;s position in space, and location relative to the observer</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a11c45d992f510ebaecaecfa902aa0910">getAltitude</a>();</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a9a2aa36fac3adbbfc9a58cdd4e780161">setOrbitalElements</a>(String thePlanet);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment">/**************************************************************************/</span></div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">getAzimuth</a>();</div>
+<div class="line"><a name="l00452"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#adf99abe7808896d091751a56f3114ce8">  452</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#adf99abe7808896d091751a56f3114ce8">setRA</a>(<span class="keywordtype">double</span> ra);</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">calculateAltitudeAndAzimuth</a>();</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            <span class="comment">// Functions to assign a name to the instance</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno"><a class="line" href="class_teensy___ephemeris.html#aaa7181a37592002baeafd2c4cdd74b1b">  461</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#aaa7181a37592002baeafd2c4cdd74b1b">setDec</a>(<span class="keywordtype">double</span> dec);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a3eb5b9fd6a1b147248293dae20e07ee1">getRA</a>();</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a4ad0b6e490f5c5f91aee7cf31789efda">getDec</a>();</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a775bf441a4248a0692eb662521221bfd">setName</a>(String);</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            String <a class="code" href="class_teensy___ephemeris.html#ab58998417244cabf08d37ef089eed5fb">getName</a>();</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a11c45d992f510ebaecaecfa902aa0910">getAltitude</a>();</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">getAzimuth</a>();</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_moon_8h.html">Moon.h</a>&quot;</span></div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">calculateAltitudeAndAzimuth</a>();</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_planets_8h.html">Planets.h</a>&quot;</span></div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="comment">// Functions to assign a name to the instance</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160; </div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            <span class="comment">// int _pin;</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    };</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_teensy___ephemeris.html#a775bf441a4248a0692eb662521221bfd">setName</a>(String);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            String <a class="code" href="class_teensy___ephemeris.html#ab58998417244cabf08d37ef089eed5fb">getName</a>();</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_moon_8h.html">Moon.h</a>&quot;</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <span class="comment">// int _pin;</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    };</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_teensy___ephemeris_html"><div class="ttname"><a href="class_teensy___ephemeris.html">Teensy_Ephemeris</a></div><div class="ttdoc">Class that stores the information about the planetary body.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:97</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html"><div class="ttname"><a href="class_teensy___ephemeris.html">Teensy_Ephemeris</a></div><div class="ttdoc">Class that stores the information about the planetary body.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:99</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a0c0da421adfd79b50665b33701473dab"><div class="ttname"><a href="class_teensy___ephemeris.html#a0c0da421adfd79b50665b33701473dab">Teensy_Ephemeris::getAzimuth</a></div><div class="ttdeci">double getAzimuth()</div><div class="ttdoc">Gets the bearing of the object.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:276</div></div>
+<div class="ttc" id="astructplanet_data_html"><div class="ttname"><a href="structplanet_data.html">planetData</a></div><div class="ttdoc">This structure holds the orbital elements for an individual planet.</div><div class="ttdef"><b>Definition:</b> Planets.h:23</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a2ed9741f014027766411408cadcf97c3"><div class="ttname"><a href="class_teensy___ephemeris.html#a2ed9741f014027766411408cadcf97c3">Teensy_Ephemeris::getLocalSiderialTime</a></div><div class="ttdeci">double getLocalSiderialTime()</div><div class="ttdoc">Returns the stored local siderial time.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:119</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_ae56595f3a8e7df825e35ba58b78f0a8c"><div class="ttname"><a href="class_teensy___ephemeris.html#ae56595f3a8e7df825e35ba58b78f0a8c">Teensy_Ephemeris::setLocalSiderialTime</a></div><div class="ttdeci">void setLocalSiderialTime()</div><div class="ttdoc">Calculates the local siderial time using the stored time and longitude. Stores the result in the plan...</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:142</div></div>
 <div class="ttc" id="astructobservertime_html_af4136da161813020e9cb2c957761f58a"><div class="ttname"><a href="structobservertime.html#af4136da161813020e9cb2c957761f58a">observertime::hours</a></div><div class="ttdeci">int hours</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:68</div></div>
@@ -297,7 +320,7 @@ $(function() {
 <div class="ttc" id="aclass_teensy___ephemeris_html_a21128709a8de09917313032ff77093ab"><div class="ttname"><a href="class_teensy___ephemeris.html#a21128709a8de09917313032ff77093ab">Teensy_Ephemeris::getHours</a></div><div class="ttdeci">int getHours()</div><div class="ttdoc">Returns the stored hour.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:194</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a4ad0b6e490f5c5f91aee7cf31789efda"><div class="ttname"><a href="class_teensy___ephemeris.html#a4ad0b6e490f5c5f91aee7cf31789efda">Teensy_Ephemeris::getDec</a></div><div class="ttdeci">double getDec()</div><div class="ttdoc">Gets the declination.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:268</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a3eb5b9fd6a1b147248293dae20e07ee1"><div class="ttname"><a href="class_teensy___ephemeris.html#a3eb5b9fd6a1b147248293dae20e07ee1">Teensy_Ephemeris::getRA</a></div><div class="ttdeci">double getRA()</div><div class="ttdoc">Gets the right ascention.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:264</div></div>
-<div class="ttc" id="aclass_teensy___ephemeris_html_a97d5f79d04f55bf48610fb413261f94b"><div class="ttname"><a href="class_teensy___ephemeris.html#a97d5f79d04f55bf48610fb413261f94b">Teensy_Ephemeris::body</a></div><div class="ttdeci">planetbody body</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:102</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_a97d5f79d04f55bf48610fb413261f94b"><div class="ttname"><a href="class_teensy___ephemeris.html#a97d5f79d04f55bf48610fb413261f94b">Teensy_Ephemeris::body</a></div><div class="ttdeci">planetbody body</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:114</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_aaa7181a37592002baeafd2c4cdd74b1b"><div class="ttname"><a href="class_teensy___ephemeris.html#aaa7181a37592002baeafd2c4cdd74b1b">Teensy_Ephemeris::setDec</a></div><div class="ttdeci">void setDec(double dec)</div><div class="ttdoc">Sets the declination.</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a41f3ca4f8cf8c1cde62e2d424959f385"><div class="ttname"><a href="class_teensy___ephemeris.html#a41f3ca4f8cf8c1cde62e2d424959f385">Teensy_Ephemeris::getSeconds</a></div><div class="ttdeci">int getSeconds()</div><div class="ttdoc">Returns the stored seconds.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:202</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a65f57d01d99f0e56b0e9370673e9539a"><div class="ttname"><a href="class_teensy___ephemeris.html#a65f57d01d99f0e56b0e9370673e9539a">Teensy_Ephemeris::setDebugging</a></div><div class="ttdeci">void setDebugging(bool _debug)</div><div class="ttdoc">Toggles debugging on and off. When debugging is on, calculated values (including intermediary values ...</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:39</div></div>
@@ -307,20 +330,21 @@ $(function() {
 <div class="ttc" id="aclass_teensy___ephemeris_html_a224472ed1ad43ece0d4796febe682d18"><div class="ttname"><a href="class_teensy___ephemeris.html#a224472ed1ad43ece0d4796febe682d18">Teensy_Ephemeris::getLongitude</a></div><div class="ttdeci">double getLongitude()</div><div class="ttdoc">Returns the stored longitude.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:256</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a0a54148e332698025fe53456901787b5"><div class="ttname"><a href="class_teensy___ephemeris.html#a0a54148e332698025fe53456901787b5">Teensy_Ephemeris::getLatitude</a></div><div class="ttdeci">double getLatitude()</div><div class="ttdoc">Returns the stored latitude.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:260</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_adf99abe7808896d091751a56f3114ce8"><div class="ttname"><a href="class_teensy___ephemeris.html#adf99abe7808896d091751a56f3114ce8">Teensy_Ephemeris::setRA</a></div><div class="ttdeci">void setRA(double ra)</div><div class="ttdoc">Sets the right ascention.</div></div>
-<div class="ttc" id="aclass_teensy___ephemeris_html_af55795b3a2d0ea6ab37686679b9ea6b5"><div class="ttname"><a href="class_teensy___ephemeris.html#af55795b3a2d0ea6ab37686679b9ea6b5">Teensy_Ephemeris::debug</a></div><div class="ttdeci">bool debug</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:111</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_af55795b3a2d0ea6ab37686679b9ea6b5"><div class="ttname"><a href="class_teensy___ephemeris.html#af55795b3a2d0ea6ab37686679b9ea6b5">Teensy_Ephemeris::debug</a></div><div class="ttdeci">bool debug</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:128</div></div>
 <div class="ttc" id="astructplanetbody_html"><div class="ttname"><a href="structplanetbody.html">planetbody</a></div><div class="ttdoc">This structure holds basic info about the planetary body, and its location in space.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:35</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a2f82bf72a61f7951c3b79aeb88250377"><div class="ttname"><a href="class_teensy___ephemeris.html#a2f82bf72a61f7951c3b79aeb88250377">Teensy_Ephemeris::acosd</a></div><div class="ttdeci">double acosd(double c)</div><div class="ttdoc">Returns arccosine of an angle, in degrees.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:73</div></div>
-<div class="ttc" id="aclass_teensy___ephemeris_html_a9088206b42d6d3c00869207fde8807ff"><div class="ttname"><a href="class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff">Teensy_Ephemeris::location</a></div><div class="ttdeci">observerLocation location</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:104</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_a9088206b42d6d3c00869207fde8807ff"><div class="ttname"><a href="class_teensy___ephemeris.html#a9088206b42d6d3c00869207fde8807ff">Teensy_Ephemeris::location</a></div><div class="ttdeci">observerLocation location</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:116</div></div>
 <div class="ttc" id="astructobservertime_html_abdbfdee0c66d5e70cf81f5b9f4a78cf9"><div class="ttname"><a href="structobservertime.html#abdbfdee0c66d5e70cf81f5b9f4a78cf9">observertime::minutes</a></div><div class="ttdeci">int minutes</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:69</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_ad81000d8233661f3155f2222d22fa145"><div class="ttname"><a href="class_teensy___ephemeris.html#ad81000d8233661f3155f2222d22fa145">Teensy_Ephemeris::getYear</a></div><div class="ttdeci">int getYear()</div><div class="ttdoc">Returns the stored year.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:182</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a2ab66bfb79f8ffbdcc38273f608189b3"><div class="ttname"><a href="class_teensy___ephemeris.html#a2ab66bfb79f8ffbdcc38273f608189b3">Teensy_Ephemeris::rev</a></div><div class="ttdeci">double rev(double angle)</div><div class="ttdoc">Returns an angle between 0 and 360.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:53</div></div>
 <div class="ttc" id="astructobservertime_html_a66d1b19e510b756670c703d7d37d4da8"><div class="ttname"><a href="structobservertime.html#a66d1b19e510b756670c703d7d37d4da8">observertime::seconds</a></div><div class="ttdeci">int seconds</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:70</div></div>
-<div class="ttc" id="aclass_teensy___ephemeris_html_ac17d3ffb33f065c9fcdb7afd4156a13b"><div class="ttname"><a href="class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b">Teensy_Ephemeris::time</a></div><div class="ttdeci">observertime time</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:103</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_ac17d3ffb33f065c9fcdb7afd4156a13b"><div class="ttname"><a href="class_teensy___ephemeris.html#ac17d3ffb33f065c9fcdb7afd4156a13b">Teensy_Ephemeris::time</a></div><div class="ttdeci">observertime time</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:115</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a49917b1ebf451612e99b54d309117b9e"><div class="ttname"><a href="class_teensy___ephemeris.html#a49917b1ebf451612e99b54d309117b9e">Teensy_Ephemeris::asind</a></div><div class="ttdeci">double asind(double c)</div><div class="ttdoc">Returns arcsine of an angle, in degrees.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:69</div></div>
 <div class="ttc" id="astructobserver_location_html_a6dfb6707d1f75278f4cd4718fe9e6ea5"><div class="ttname"><a href="structobserver_location.html#a6dfb6707d1f75278f4cd4718fe9e6ea5">observerLocation::longitude</a></div><div class="ttdeci">double longitude</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:84</div></div>
 <div class="ttc" id="astructplanetbody_html_a56804e4984b698698fb5f77244ba4e00"><div class="ttname"><a href="structplanetbody.html#a56804e4984b698698fb5f77244ba4e00">planetbody::azimuth</a></div><div class="ttdeci">double azimuth</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:40</div></div>
 <div class="ttc" id="astructobservertime_html_aff1b95b3b7826074d0a13901464609d6"><div class="ttname"><a href="structobservertime.html#aff1b95b3b7826074d0a13901464609d6">observertime::year</a></div><div class="ttdeci">int year</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:65</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a1762fb259fb667f7b879a8aeee99adc7"><div class="ttname"><a href="class_teensy___ephemeris.html#a1762fb259fb667f7b879a8aeee99adc7">Teensy_Ephemeris::getMinutes</a></div><div class="ttdeci">int getMinutes()</div><div class="ttdoc">Returns the stored minutes.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:198</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_a9a2aa36fac3adbbfc9a58cdd4e780161"><div class="ttname"><a href="class_teensy___ephemeris.html#a9a2aa36fac3adbbfc9a58cdd4e780161">Teensy_Ephemeris::setOrbitalElements</a></div><div class="ttdeci">void setOrbitalElements(String thePlanet)</div><div class="ttdoc">Loads the orbital parameters into the planet object.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:280</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a2b5459f3bd12bae5cb63853c3eced472"><div class="ttname"><a href="class_teensy___ephemeris.html#a2b5459f3bd12bae5cb63853c3eced472">Teensy_Ephemeris::sind</a></div><div class="ttdeci">double sind(double angle)</div><div class="ttdoc">Returns the sine of an angle.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:57</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a076bd82cbfd676d67bd1d3d3bd261070"><div class="ttname"><a href="class_teensy___ephemeris.html#a076bd82cbfd676d67bd1d3d3bd261070">Teensy_Ephemeris::Teensy_Ephemeris</a></div><div class="ttdeci">Teensy_Ephemeris()</div><div class="ttdoc">Create a new Teensy_Ephemeris instance.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:35</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a1856d9d33ddd03d754b6fa8e6387ee9a"><div class="ttname"><a href="class_teensy___ephemeris.html#a1856d9d33ddd03d754b6fa8e6387ee9a">Teensy_Ephemeris::tand</a></div><div class="ttdeci">double tand(double angle)</div><div class="ttdoc">Returns the tangent of an angle.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:65</div></div>
@@ -341,10 +365,11 @@ $(function() {
 <div class="ttc" id="astructobserver_location_html_a0c30ce36d1d72ced410bd5f14747c807"><div class="ttname"><a href="structobserver_location.html#a0c30ce36d1d72ced410bd5f14747c807">observerLocation::latitude</a></div><div class="ttdeci">double latitude</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:83</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_ae33154fa8e9e66dfcb69913671621b57"><div class="ttname"><a href="class_teensy___ephemeris.html#ae33154fa8e9e66dfcb69913671621b57">Teensy_Ephemeris::setTime</a></div><div class="ttdeci">void setTime(int year, int month, int day, int hours, int minutes, int seconds)</div><div class="ttdoc">Stores the components of the specified in the Teensy_Ephemeris object. Assumes UTC time....</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:147</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a11c45d992f510ebaecaecfa902aa0910"><div class="ttname"><a href="class_teensy___ephemeris.html#a11c45d992f510ebaecaecfa902aa0910">Teensy_Ephemeris::getAltitude</a></div><div class="ttdeci">double getAltitude()</div><div class="ttdoc">Gets the altitude of the object above the horizon.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:272</div></div>
-<div class="ttc" id="aclass_teensy___ephemeris_html_a881c56b70d817d173c6b8ff96749616f"><div class="ttname"><a href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">Teensy_Ephemeris::calculateAltitudeAndAzimuth</a></div><div class="ttdeci">void calculateAltitudeAndAzimuth()</div><div class="ttdoc">Calculates the position of an object in the sky.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:282</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_a881c56b70d817d173c6b8ff96749616f"><div class="ttname"><a href="class_teensy___ephemeris.html#a881c56b70d817d173c6b8ff96749616f">Teensy_Ephemeris::calculateAltitudeAndAzimuth</a></div><div class="ttdeci">void calculateAltitudeAndAzimuth()</div><div class="ttdoc">Calculates the position of an object in the sky.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:284</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a2b41002eee1c08f3aa44316c416fb4bc"><div class="ttname"><a href="class_teensy___ephemeris.html#a2b41002eee1c08f3aa44316c416fb4bc">Teensy_Ephemeris::setLatitude</a></div><div class="ttdeci">void setLatitude(double latitude)</div><div class="ttdoc">Stores the latitude.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:240</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a327e88dbfb66c2aae7b1232906be19f5"><div class="ttname"><a href="class_teensy___ephemeris.html#a327e88dbfb66c2aae7b1232906be19f5">Teensy_Ephemeris::setJulianDate</a></div><div class="ttdeci">void setJulianDate()</div><div class="ttdoc">Calculates the Julian date, using the stored time values. Stores the value in the planet object.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:171</div></div>
 <div class="ttc" id="aclass_teensy___ephemeris_html_a4bac17934d127c57d6748e0a4fd2effc"><div class="ttname"><a href="class_teensy___ephemeris.html#a4bac17934d127c57d6748e0a4fd2effc">Teensy_Ephemeris::getMonth</a></div><div class="ttdeci">int getMonth()</div><div class="ttdoc">Returns the stored month.</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.cpp:186</div></div>
+<div class="ttc" id="aclass_teensy___ephemeris_html_a35d3b1712395c946ef0e1572ccdb6d4f"><div class="ttname"><a href="class_teensy___ephemeris.html#a35d3b1712395c946ef0e1572ccdb6d4f">Teensy_Ephemeris::orbitalElements</a></div><div class="ttdeci">planetData orbitalElements</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:117</div></div>
 <div class="ttc" id="a_moon_8h_html"><div class="ttname"><a href="_moon_8h.html">Moon.h</a></div></div>
 <div class="ttc" id="astructobservertime_html_a00a5598916e3220bacea557cd37e5db1"><div class="ttname"><a href="structobservertime.html#a00a5598916e3220bacea557cd37e5db1">observertime::month</a></div><div class="ttdeci">int month</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:66</div></div>
 <div class="ttc" id="astructobservertime_html"><div class="ttname"><a href="structobservertime.html">observertime</a></div><div class="ttdoc">This structure holds the time to be used for all position calculations. NOTE: Time is UTC,...</div><div class="ttdef"><b>Definition:</b> Teensy_Ephemeris.h:64</div></div>
