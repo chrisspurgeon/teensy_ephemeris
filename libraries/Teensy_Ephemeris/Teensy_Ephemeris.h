@@ -92,9 +92,21 @@
     @param  time - Object that holds the time of the observation, time-based
                    calculations, such as the Julian date.
     @param  location - Object that holds the observer's latitude and longitude.
+    @param  orbitalElements - Object holding the orbital parameters for a given planet. Not
+    used for the Moon.
 */
 /**************************************************************************/
     class Teensy_Ephemeris {
+
+
+/**************************************************************************/
+/*!
+    Planet position stuff is in Planets.h and Planets.cpp
+
+*/
+/**************************************************************************/
+
+#include "Planets.h"
 
         public:
         /// Create a new Teensy_Ephemeris instance
@@ -102,6 +114,11 @@
             planetbody body;/**< holds information about the planet.*/
             observertime time;/**< holds information about the observation time.*/
             observerLocation location;/**< holds the observer's latitude and longitude.*/
+            planetData orbitalElements;/**< holds the orbital parameters for a planet.*/
+
+
+
+
 
 
 
@@ -130,6 +147,9 @@
 */
 /**************************************************************************/
             void getDebugging();
+
+
+
 
 
 
@@ -203,7 +223,13 @@
 
 
 
-            // Time related functions
+
+
+
+
+
+
+// Time related functions
 
 
 /**************************************************************************/
@@ -344,7 +370,10 @@
 
 
 
-            // Observer location related functions
+
+
+
+// Observer location related functions
 
 
 
@@ -393,8 +422,24 @@
 
 
 
-            // Functions to calculate body position in space, and location relative to the observer
 
+
+
+
+// Functions to calculate planetary body's position in space, and location relative to the observer
+
+
+
+
+/**************************************************************************/
+/*!
+    @brief  Loads the orbital parameters into the planet object.
+    @param  thePlanet
+            The planet name. Must be one of the values in the "planets" enum.
+*/
+/**************************************************************************/
+
+            void setOrbitalElements(String thePlanet);
 
 
 /**************************************************************************/
@@ -507,18 +552,6 @@
 /**************************************************************************/
 
 #include "Moon.h"
-
-/**************************************************************************/
-/*!
-    Planet position stuff is in Planets.h and Planets.cpp
-
-*/
-/**************************************************************************/
-
-#include "Planets.h"
-
-
-
 
 
 

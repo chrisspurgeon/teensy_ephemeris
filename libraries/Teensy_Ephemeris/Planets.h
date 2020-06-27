@@ -14,7 +14,7 @@
 
 
 /** @struct planetData
- *  @brief This structure the orbital elements for an individual planet.
+ *  @brief This structure holds the orbital elements for an individual planet.
  *  @var planetData::name
  *  The planet name, in all caps (e.g. "NEPTUNE").
  *  @var planetData::element
@@ -36,4 +36,8 @@ struct PlanetsData {
 };
 
 
-enum {MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE} planet;
+/** @enum planet
+ * @brief enumeration used to map specific planets to their position in the PlanetsData array.
+ */
+
+enum planet {MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE};

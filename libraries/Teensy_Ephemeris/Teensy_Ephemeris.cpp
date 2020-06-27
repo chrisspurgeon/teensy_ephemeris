@@ -277,7 +277,9 @@ double Teensy_Ephemeris::getAzimuth() {
   return body.azimuth;
 }
 
+void Teensy_Ephemeris::setOrbitalElements(String Theplanet) {
 
+}
 // calculateAltitudeAndAzimuth converts ra and dec to altitude and azimuth
 void Teensy_Ephemeris::calculateAltitudeAndAzimuth() {
   // First, update the local siderial time, and get the value
