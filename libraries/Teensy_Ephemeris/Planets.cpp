@@ -112,3 +112,23 @@ PlanetsData planets = {MERCURYDATA, VENUSDATA, EARTHDATA, MARSDATA, JUPITERDATA,
 // planetData planet8 = {"foo",{0.0, 1.1, 2.2, 3.3}};
 
 // PlanetsData planets = {planet1, planet2, planet3, planet4, planet5, planet6, planet7, planet8 };
+
+
+
+
+void Teensy_Ephemeris::getPlanetOffset(String thePlanet) {
+    Serial.println("Inside getPlanetOffset() I got this variable...");
+    Serial.println(thePlanet);
+
+    planet thePlanets;
+    thePlanets = VENUS;
+    Serial.println(thePlanets);
+    Serial.println("Trying something else...");
+    planetData thePlanetData = MERCURYDATA;
+    Serial.println(thePlanetData.name);
+    Serial.println(thePlanetData.element[4][0], 10);
+    orbitalElements = thePlanetData;
+    Serial.println(orbitalElements.element[4][0], 10);
+//    Serial.println(thePlanets.thePlanet);
+//    return planet[thePlanet];
+}
